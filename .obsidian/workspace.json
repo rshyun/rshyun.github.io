@@ -15,7 +15,7 @@
               "state": {
                 "file": "test.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -154,14 +154,16 @@
       "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
-      "webpage-html-export:Export Vault to HTML": false,
       "obsidian-kanban:새 보드 만들기": false,
-      "obsidian-rich-links:Rich Links": false
+      "obsidian-rich-links:Rich Links": false,
+      "webpage-html-export:Export Vault to HTML": false
     }
   },
   "active": "e85638fcd2d3f4e4",
   "lastOpenFiles": [
     "test.md",
+    "docs/lib/media/desktop.ini",
+    "docs/desktop.ini",
     "index.md",
     "README.md",
     "이름 없는 보드.md",
@@ -174,8 +176,6 @@
     "docs/lib/styles",
     "docs/lib/scripts/graph-data.js",
     "docs/lib/scripts/minisearch.js",
-    "docs/lib/scripts/pixi.js",
-    "docs/lib/scripts/tinycolor.js",
     "docs/lib/media/favicon.png",
     "docs/lib/media/3d6c1bdc4d87cde4de67.svg",
     "docs/lib/media/874d8b8e340f75575caa.svg",

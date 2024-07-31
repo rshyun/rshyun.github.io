@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 31 Jul 2024 14:52:21 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 31 Jul 2024 14:52:21 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 31 Jul 2024 14:54:59 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 31 Jul 2024 14:54:58 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.05 21:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -6,7 +6,7 @@
 <br><br><br>분석용 데이터를 이용한 가설 설정을 통하여 통계 모형을 만들거나 기계 학습(Machine Learning)을 이용한 데이터의 분류, 예측, 군집 등의 기능을 수행하는 모형을 만드는 과정이다. 주로 지도 학습과 비지도 학습 강화 학습으로 나뉘며, 모델 학습을 효과적으로 진행하기 위해서 모델 학습 전에 데이터 셋을 Training과 Testing 으로 분할한다.<br>데이터 셋에서 설명 변수를 이용하여 다양한 알고리즘을 거쳐 학습을 진행하여 그 중 가장 우수한 알고리즘을 선정하고, 일부 변수를 제외한 최적의 모델 선정 과정을 거치게 된다. 데이터에 대해 모델을 학습한다는 것은 데이터에 기반해 최적화된 모델 파라미터를 알아내는 것을 말한다.<br><br><br>데이터에 대한 Label, 즉 명시적인 정답이 주어진 상태에서 컴퓨터를 학습시키는 방법으로, (data, label) 의 형태로 학습을 진행한다.<br>
 트레이닝 데이터 셋으로 학습이 끝나면 label 이 지정되지 않은 테스트 데이터 셋을 이용해서 학습된 알고리즘이 얼마나 정확히 예측하는 지를 측정할 수 있다.<br>이 때 예측하는 결과값이 discrete value (이산값) 이면 classification (분류) 문제, 예측하는 결과값이 continuous value (연속값) 이면 regression (회귀) 문제이다.<br><br>데이터에 대한 label, 즉 명시적인 정답이 주어지지 않은 상태에서 컴퓨터를 학습시키는 방법으로, 데이터에 대한 명시적인 정답 없이 (data) 형태로 학습을 진행한다.<br>비지도 학습은 데이터의 숨겨진 특징이나 구조를 발견하는데 사용하는데, 예를 들어 데이터가 무작위로 분포되어 있을 때 이 데이터를 비슷한 특성을 가진 세 가지로 부류로 묶는 클러스터링 알고리즘이 있다.<br><br>지도 학습과 비지도 학습이 데이터가 주어진 정적인 상태에서 학습을 진행한다면, 강화 학습은 에이전트가 주어진 환경에 대해 어떤 행동을 취하고 이로부터 어떤 보상을 얻으면서 학습을 진행한다.<br>
 이 때, 에이전트는 보상을 최대화하도록 학습을 진행하기 때문에 일종의 동적인 상태에서 데이터를 수집하는 과정까지 포함된 알고리즘이다.<br>
-강화 학습의 대표적인 알고리즘은 Q-Learning 이 있다.]]></description><link>24-하계-모각코\1회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/1회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:41:59 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
+강화 학습의 대표적인 알고리즘은 Q-Learning 이 있다.]]></description><link>24-하계-모각코\1회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/1회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:27 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.27 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -22,27 +22,27 @@
 <br>DCGAN (Deep Convolutional GAN): 컨볼루션 신경망을 사용한 GAN 모델로, 이미지 생성에 매우 효과적이다.
 <br>StyleGAN: 얼굴 이미지 생성 등에서 높은 성능을 보이는 GAN 모델로, 스타일 전이를 활용하여 다양한 스타일의 이미지를 생성할 수 있다.
 <br>BigGAN: 대규모 데이터 셋을 사용하여 고해상도 이미지를 생성하는 GAN 모델이다.
-<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:42:18 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
+<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:47 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.29 22:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : Pytorch 설치 및 가상 환경
-<br>]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:42:33 GMT</pubDate></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
+<br>]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:49 GMT</pubDate></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.31 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : Tensor 및 Pytorch
-<br>]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:42:59 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+<br>]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:50 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.05 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : 
-<br>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:43:23 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+<br>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:51 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.08 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : 
-<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:43:47 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:53 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
  <br><br>
 1회차 (07/05) : 모델 학습 방법 개념 정리<br>
 2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>

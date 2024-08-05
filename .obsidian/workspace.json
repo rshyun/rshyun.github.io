@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "24 하계 모각코/2회차 계획 및 결과.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": true
               }
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 291.5
   },
   "right": {
     "id": "b8b53b513e17a2f3",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "24 하계 모각코/2회차 계획 및 결과.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "24 하계 모각코/2회차 계획 및 결과.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "24 하계 모각코/2회차 계획 및 결과.md"
+                "file": "index.md"
               }
             }
           }
@@ -161,14 +161,14 @@
   },
   "active": "e85638fcd2d3f4e4",
   "lastOpenFiles": [
-    "24 하계 모각코/2회차 계획 및 결과.md",
-    "24 하계 모각코/3회차 계획 및 결과.md",
+    "24 하계 모각코/5회차 계획 및 결과.md",
+    "index.md",
     "24 하계 모각코/4회차 계획 및 결과.md",
     "24 하계 모각코/6회차 계획 및 결과.md",
-    "desktop.ini",
-    "24 하계 모각코/5회차 계획 및 결과.md",
+    "24 하계 모각코/3회차 계획 및 결과.md",
     "24 하계 모각코/1회차 계획 및 결과.md",
-    "index.md",
+    "24 하계 모각코/2회차 계획 및 결과.md",
+    "desktop.ini",
     "docs/lib/styles/other-plugins.css",
     "docs/24-하계-모각코/6회차-계획-및-결과.html",
     "docs/24-하계-모각코/5회차-계획-및-결과.html",

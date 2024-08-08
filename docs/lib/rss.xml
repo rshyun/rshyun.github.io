@@ -1,4 +1,55 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 05 Aug 2024 16:10:33 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 05 Aug 2024 16:10:33 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 08 Aug 2024 06:46:29 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 08 Aug 2024 06:46:29 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.07.29 22:00 - 24:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : Pytorch 환경 설정
+<br><br><br>
+<br>
+Visual studio 2022 설치
+
+<br>
+<a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택한다.
+
+<br>
+IntelliJ 또는 사용하는 IDE 를 연다.
+
+<br>
+pytorch  를 사용할 프로젝트에서 Jupyter Notebook 을 열고 %pip install torch torchvision torchaudio 를 실행한다.
+
+<br><br>
+<br>Visual studio 2022 설치
+<br>새 프로젝트를 생성할 때 New 와 함께 conda 가상 환경을 선택한다.
+<br>생성된 프로젝트의 터미널을 열고 <a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택하여 실행한다.
+<br><br>
+<br>Visual studio 2022 설치
+<br><a rel="noopener" class="external-link" href="https://www.anaconda.com/download" target="_blank">https://www.anaconda.com/download</a> 에서 아나콘다를 설치한다.
+<br>설치가 완료되면 PowerShell 을 열어 python --version 과 conda --version 을 실행하여 python 과 anaconda 의 버전을 확인한다.
+<br><a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 pip 가 아닌 conda 와 함께 자신과 맞는 설치 세부 정보를 선택하여 실행한다.
+<br>전부 설치가 완료되면 PowerShell 에서 다음 명령을 실행한다. 전부 실행이 되면 설치가 완료된 것이다.
+<br>python
+
+import torch
+x = torch.rand(2, 3)
+print(x)
+복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Thu, 08 Aug 2024 06:46:11 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.05 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : GAN 모델로 이미지 생성 모델 실습 (1)
+<br>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Thu, 08 Aug 2024 06:10:49 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.08 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : GAN 모델로 이미지 생성 모델 실습 (2)
+<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 08 Aug 2024 06:10:58 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+ <br><br>
+1회차 (07/05) : 모델 학습 방법 개념 정리<br>
+2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>
+3회차 (07/29) : Pytorch 환경 설정<br>
+4회차 (07/31) : Tensor 및 Pytorch<br>
+5회차 (08/05) : GAN 모델로 이미지 생성 모델 실습 (1)<br>
+6회차 (08/08) : GAN 모델로 이미지 생성 모델 실습 (2)
+]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Thu, 08 Aug 2024 06:15:30 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.27 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -15,35 +66,7 @@
 <br>DCGAN (Deep Convolutional GAN): 컨볼루션 신경망을 사용한 GAN 모델로, 이미지 생성에 매우 효과적이다.
 <br>StyleGAN: 얼굴 이미지 생성 등에서 높은 성능을 보이는 GAN 모델로, 스타일 전이를 활용하여 다양한 스타일의 이미지를 생성할 수 있다.
 <br>BigGAN: 대규모 데이터 셋을 사용하여 고해상도 이미지를 생성하는 GAN 모델이다.
-<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Mon, 05 Aug 2024 15:51:06 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.05 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : GAN 모델로 이미지 생성 모델 실습
-<br>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Mon, 05 Aug 2024 12:43:35 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
- <br><br>
-1회차 (07/05) : 모델 학습 방법 개념 정리<br>
-2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>
-3회차 (07/29) : Pytorch 설치 및 가상 환경<br>
-4회차 (07/31) : Tensor 및 Pytorch<br>
-5회차 (08/05) : GAN 모델로 이미지 생성 모델 실습<br>
-6회차 (08/08) : 
-]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Mon, 05 Aug 2024 16:10:28 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.07.29 22:00 - 24:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : Pytorch 설치 및 가상 환경
-<br><br>
-<br>
-anaconda 를 통해 설치하기
-
-<br>
-IntelliJ 설치하기
-
-<br>
-<br>Virtualenv 가상환경을 통해 설치하기
-<br>Conda 가상환경을 통해 설치하기
-]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Mon, 05 Aug 2024 12:05:57 GMT</pubDate></item><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
+<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Mon, 05 Aug 2024 15:51:06 GMT</pubDate></item><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.05 21:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -56,9 +79,4 @@ IntelliJ 설치하기
 날짜 : 2024.07.31 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : Tensor 및 Pytorch
-<br>]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:50 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.08 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 
-<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:53 GMT</pubDate></item></channel></rss>
+<br>]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Wed, 31 Jul 2024 14:54:50 GMT</pubDate></item></channel></rss>

@@ -1,50 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 17:00:06 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 17:00:05 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.07.05 21:00 - 24:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 모델 학습 방법 개념 정리
-<br><br><br>분석용 데이터를 이용한 가설 설정을 통하여 통계 모형을 만들거나 기계 학습(Machine Learning)을 이용한 데이터의 분류, 예측, 군집 등의 기능을 수행하는 모형을 만드는 과정이다. 주로 지도 학습과 비지도 학습 강화 학습으로 나뉘며, 모델 학습을 효과적으로 진행하기 위해서 모델 학습 전에 데이터 셋을 Training과 Testing 으로 분할한다.<br>데이터 셋에서 설명 변수를 이용하여 다양한 알고리즘을 거쳐 학습을 진행하여 그 중 가장 우수한 알고리즘을 선정하고, 일부 변수를 제외한 최적의 모델 선정 과정을 거치게 된다. 데이터에 대해 모델을 학습한다는 것은 데이터에 기반해 최적화된 모델 파라미터를 알아내는 것을 말한다.<br><br><br>데이터에 대한 Label, 즉 명시적인 정답이 주어진 상태에서 컴퓨터를 학습시키는 방법으로, (data, label) 의 형태로 학습을 진행한다.<br>
-트레이닝 데이터 셋으로 학습이 끝나면 label 이 지정되지 않은 테스트 데이터 셋을 이용해서 학습된 알고리즘이 얼마나 정확히 예측하는 지를 측정할 수 있다.<br>이 때 예측하는 결과값이 discrete value (이산값) 이면 classification (분류) 문제, 예측하는 결과값이 continuous value (연속값) 이면 regression (회귀) 문제이다.<br><br>데이터에 대한 label, 즉 명시적인 정답이 주어지지 않은 상태에서 컴퓨터를 학습시키는 방법으로, 데이터에 대한 명시적인 정답 없이 (data) 형태로 학습을 진행한다.<br>비지도 학습은 데이터의 숨겨진 특징이나 구조를 발견하는데 사용하는데, 예를 들어 데이터가 무작위로 분포되어 있을 때 이 데이터를 비슷한 특성을 가진 세 가지로 부류로 묶는 클러스터링 알고리즘이 있다.<br><br>지도 학습과 비지도 학습이 데이터가 주어진 정적인 상태에서 학습을 진행한다면, 강화 학습은 에이전트가 주어진 환경에 대해 어떤 행동을 취하고 이로부터 어떤 보상을 얻으면서 학습을 진행한다.<br>
-이 때, 에이전트는 보상을 최대화하도록 학습을 진행하기 때문에 일종의 동적인 상태에서 데이터를 수집하는 과정까지 포함된 알고리즘이다.<br>
-강화 학습의 대표적인 알고리즘은 Q-Learning 이 있다.]]></description><link>24-하계-모각코\1회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/1회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:19:50 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.07.27 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 이미지 생성 모델, 음성 생성 모델 
-<br><br><br><br><br>초기 음성 합성에 많이 사용되었던 모델.<br>
-음성을 여러 상태(state)로 나누고 상태 간 전이 확률을 통해 음성을 생성한다. 음성의 자연스러움은 떨어지지만 구현이 상대적으로 간단하다.<br><br>음성의 확률 분포를 가우시안 혼합 분포로 모델링하여 음성을 생성한다. HMM보다 더 자연스러운 음성을 생성할 수 있지만, 활용도가 제한적이다.<br>
-이름 그대로 가우시안 분포를 여러 개 혼합하여 데이터의 복잡한 분포를 근사하기 위한 모델.<br><br><br>구글에서 개발한 모델.<br>
-음성의 시간 도메인 신호를 직접 생성한다. 매우 자연스러운 음성을 생성할 수 있으며, 많은 연구에서 높은 성능을 보이고 있다.<br><br>음성 합성의 텍스트-음성 변환(TTS) 시스템.<br>
-텍스트를 입력 받아 음성 스펙트로그램을 생성한 후 이를 음성으로 변환한다. Tacotron 2는 WaveNet과 결합하여 높은 품질의 음성을 생성할 수 있다.<br><br>트랜스포머 기반의 TTS 모델.<br>
-긴 문장에서도 안정적인 음성을 생성할 수 있다. 트랜스포머의 셀프 어텐션 메커니즘을 활용하여 문맥을 잘 반영한다.<br><br><br>음성 데이터를 벡터 양자화를 통해 압축하고, 이를 다시 복원하여 음성을 생성한다. 자연스러운 음성 합성에 적합하다.<br><br><br>멜 스펙트로그램을 음성 신호로 변환하는 GAN 기반 모델.<br>
-훈련 속도가 빠르고, 고품질의 음성을 생성할 수 있다.<br><br><br><br>초기 이미지 생성에 사용된 모델로 현재는 제한된 성능을 가진다.<br>
-이미지 데이터를 주성분으로 분해하여 저차원 공간에서 이미지를 재구성한다. <br><br>입력 이미지를 저차원 잠재 공간으로 압축한 후 이를 다시 복원하여 이미지를 생성한다. 주로 이미지 복원 및 생성에 사용된다.<br><br><br>이미지를 잠재 공간에 매핑하고, 이를 다시 이미지로 복원한다. 생성된 이미지의 다양성을 확보하기 위해 확률적 접근 방식을 사용한다.<br><br>Generator(생성모델) 과 Discriminator(판별모델) 이라는 서로 다른 2개의 네트워크로 이루어져 있으며 이 두 네트워크를 적대적으로 학습시키며 이미지를 생성한다.<br>생성모델의 목적은 진짜에 가까운 가짜를 생성하는 것이고 판별모델의 목적은 표본이 가짜인지 진짜인지 결정하는 것이다.<br>
-이 2가지 모델을 포함한 GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 데이터를 생성하는 것이며, 따라서 판별모델이 진짜인지 가짜인지 분별할 수 없는 경계에서 가짜 샘플과 실제 샘플을 구별할 수 없는 최적 솔루션으로 간주한다.<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:20:54 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.07.29 22:00 - 24:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : PyTorch 환경 설정
-<br><br><br><br>
-<br>Visual studio 2022 설치
-<br><a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택한다.
-<br>IntelliJ 또는 사용하는 IDE 를 연다.
-<br>pytorch  를 사용할 프로젝트에서 Jupyter Notebook 을 열고 %pip install torch torchvision torchaudio 를 실행한다.
-<br><br>
-<br>Visual studio 2022 설치
-<br>새 프로젝트를 생성할 때 New 와 함께 conda 가상 환경을 선택한다.
-<br>생성된 프로젝트의 터미널을 열고 <a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택하여 실행한다.
-<br><br>
-<br>Visual studio 2022 설치
-<br><a rel="noopener" class="external-link" href="https://www.anaconda.com/download" target="_blank">https://www.anaconda.com/download</a> 에서 아나콘다를 설치한다.
-<br>설치가 완료되면 PowerShell 을 열어 python --version 과 conda --version 을 실행하여 python 과 anaconda 의 버전을 확인한다.
-<br><a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 pip 가 아닌 conda 와 함께 자신과 맞는 설치 세부 정보를 선택하여 실행한다.
-<br>전부 설치가 완료되면 PowerShell 에서 다음 명령을 실행한다. 전부 실행이 되면 설치가 완료된 것이다.
-<br>python
-
-import torch
-x = torch.rand(2, 3)
-print(x)
-복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 16:23:25 GMT</pubDate></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:03:04 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:03:03 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.31 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -153,8 +107,10 @@ ankleboot999.jpg, 9
 <br>self.img_labels = pd.read_csv(annotations_file) : pandas 라이브러리를 사용해 주어진 annotations_file 경로에서 CSV 파일을 읽어와 self.img_labels 라는 인스턴스 변수에 저장함.
 <br><br>데이터셋의 샘플 개수를 반환함.<br>def __len__(self):
     return len(self.img_labels)
-복사<br><br>주어진 인덱스 idx 에 해당하는 샘플을 데이터셋에서 불러오고 반환함.<br>
-인덱스를 기반으로, 디스크에서 이미지의 위치를 식별하고, read_image 를 사용하여 이미지를 텐서로 변환하고 self.img_labels 의 csv 데이터로부터 해당하는 레이블을 가져오고, 해당하는 경우 변형 함수들을 호출한 뒤 텐서 이미지와 라벨을 Python dict 형식으로 반환함.<br>def __getitem__(self, idx):
+복사<br><br>
+<br>주어진 인덱스 idx 에 해당하는 샘플을 데이터셋에서 불러오고 반환함.
+<br>인덱스를 기반으로, 디스크에서 이미지의 위치를 식별하고, read_image 를 사용하여 이미지를 텐서로 변환하고, self.img_labels 의 csv 데이터로부터 해당하는 레이블을 가져오고, 해당하는 경우 변형 함수들을 호출한 뒤 텐서 이미지와 라벨을 Python dict 형식으로 반환함.
+<br>def __getitem__(self, idx):
     img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0])
     image = read_image(img_path)
     label = self.img_labels.iloc[idx, 1]
@@ -184,9 +140,14 @@ test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
     else "cpu"
 )
 print(f"Using {device} device")
-복사<br><br><br>딥러닝에서 가장 핵심적인 부분으로 신경망의 각 노드가 가지고 있는 가중치와 편향을 학습시키기 위한 알고리즘으로, 이 알고리즘에서 매개변수(모델 가중치)는 주어진 매개변수에 대한 손실 함수의 변화도에 따라 조정됨.<br><br>매개변수들에 대한 손실 함수의 변화도를 계산하기 위해서는 해당 텐서에 requiresgrad 속성을 설정해야 함.<br>
-requires_grad 의 값은 텐서를 생성할 때 설정하거나, 나중에 x.requires_grad(True) 메소드를 사용하여 설정할 수 있음.<br><br>신경망에서 매개변수의 가중치를 최적화하려면 매개변수에 대한 손실함수의 도함수(derivative)를 계산해야 함. 이러한 도함수를 계산하기 위해  .backward() 를 호출한 다음 각 매개변수의 텐서의 .grad 에서 값을 가져옴.<br>
-연산 그래프의 잎(leaf) 노드들 중 requires_grad 속성이 True 로 설정된 노드들의 grad 속성만 구할 수 있음.<br><br>
+복사<br><br><br>딥러닝에서 가장 핵심적인 부분으로 신경망의 각 노드가 가지고 있는 가중치와 편향을 학습시키기 위한 알고리즘으로, 이 알고리즘에서 매개변수(모델 가중치)는 주어진 매개변수에 대한 손실 함수의 변화도에 따라 조정됨.<br><br>
+<br>매개변수들에 대한 손실 함수의 변화도를 계산하기 위해서는 해당 텐서에 requires_grad 속성을 설정해야 함.
+<br>requiresgrad 의 값은 텐서를 생성할 때 설정하거나, 나중에 x.requires_grad(True) 메소드를 사용하여 설정할 수 있음.
+<br><br>
+<br>신경망에서 매개변수의 가중치를 최적화하려면 매개변수에 대한 손실함수의 도함수(derivative)를 계산해야 함.
+<br>이러한 도함수를 계산하기 위해  .backward() 를 호출한 다음 각 매개변수의 텐서의 .grad 에서 값을 가져옴.<br>
+연산 그래프의 잎(leaf) 노드들 중 requires_grad 속성이 True 로 설정된 노드들의 grad 속성만 구할 수 있음.
+<br><br>
 <br>.backward() 를 호출. (시작)
 <br>각 .grad_fn 으로부터 변화도를 계산.
 <br>각 텐서의 .grad 속성에 계산 결과를 저장.
@@ -198,18 +159,295 @@ epochs = 5
 <br>learning_rate : 학습률. 각 배치/에폭에서 모델의 매개변수를 조절하는 비율. 값이 작을수록 학습 속도가 느려지고, 값이 크면 학습 중 예측할 수 없는 동작이 발생할 수 있음.
 <br>batch_size : 배치 크기. 매개 변수가 갱신되기 전 신경망을 통해 전파된 데이터 샘플의 수.
 <br>epochs : 에폭 수. 데이터셋을 반복하는 횟수.
-<br><br>하이퍼파라미터를 설정한 뒤에는 최적화 단계를 통해 모델을 학습하고 최적화할 수 있음. 최적화 단계의 각 반복을 에폭이라고 부르며, 하나의 에폭은 아래의 두 부분을 구성됨.<br><br>train 데이터셋을 반복하고 최적의 매개변수로 수렴함.<br><br>모델 성능이 개선되고 있는지를 확인하기 위해 테스트 데이터셋을 반복함.<br><br>train 데이터를 제공하면, 학습되지 않은 신경망은 정답을 제공하지 않을 확률이 높음. 손실 함수는 획득한 결과와 실제 값 사이의 틀린 정도를 측정하며, 학습 중에 이 값을 최소화하려고 함. 주어진 데이터 샘플을 입력으로 계산한 예측과 정답을 비교하여 손실을 계산함.<br>일반적인 손실 함수에는 회귀 문제에 사용하는 nn.MSELoss(평균 제곱 오차) 나 분류에서 사용하는 nn.NLLLoss(음의 로그 우도), 그리고 nn.LogSoftmax 와 nn.NLLLoss 를 합친 nn.CrossEntropyLoss(교차 엔트로피) 등이 있음.<br>loss_fn = nn.CrossEntropyLoss()
-복사<br><br>최적화는 각 학습 단계에서 모델의 오류를 줄이기 위해 모델 매개변수를 조정하는 과정임. 최적화 알고리즘은 이 과정이 수행되는 방식을 정의함. 모든 최적화 절차는 optimizer 객체에 캡슐화됨.<br>optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
-복사<br>여기서는 SGD(확률적 경사 하강법 Stochastic Gradient Descent) 옵티마이저를 사용하고 있으며, PyTorch 에는 ADAM 이마 RMSProp 와 같은 다른 종류의 모델과 데이터에서 더 잘 동작하는 다양한 옵티마이저가 있음.<br><br>
+<br><br>
+<br>하이퍼파라미터를 설정한 뒤에는 최적화 단계를 통해 모델을 학습하고 최적화할 수 있음.
+<br>최적화 단계의 각 반복을 에폭이라고 부르며, 하나의 에폭은 아래의 두 부분을 구성됨.
+<br><br>train 데이터셋을 반복하고 최적의 매개변수로 수렴함.<br><br>모델 성능이 개선되고 있는지를 확인하기 위해 테스트 데이터셋을 반복함.<br><br>
+<br>
+train 데이터를 제공하면, 학습되지 않은 신경망은 정답을 제공하지 않을 확률이 높음.
+
+<br>
+손실 함수는 획득한 결과와 실제 값 사이의 틀린 정도를 측정하며, 학습 중에 이 값을 최소화하려고 함.
+
+<br>
+주어진 데이터 샘플을 입력으로 계산한 예측과 정답을 비교하여 손실을 계산함.
+
+<br>
+일반적인 손실 함수에는 회귀 문제에 사용하는 nn.MSELoss(평균 제곱 오차) 나 분류에서 사용하는 nn.NLLLoss(음의 로그 우도), 그리고 nn.LogSoftmax 와 nn.NLLLoss 를 합친 nn.CrossEntropyLoss(교차 엔트로피) 등이 있음.
+
+<br>loss_fn = nn.CrossEntropyLoss()
+복사<br><br>
+<br>최적화는 각 학습 단계에서 모델의 오류를 줄이기 위해 모델 매개변수를 조정하는 과정임.
+<br>최적화 알고리즘은 이 과정이 수행되는 방식을 정의함. 모든 최적화 절차는 optimizer 객체에 캡슐화됨.
+<br>optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+복사<br>
+<br>여기서는 SGD(확률적 경사 하강법 Stochastic Gradient Descent) 옵티마이저를 사용하고 있으며, PyTorch 에는 ADAM 이마 RMSProp 와 같은 다른 종류의 모델과 데이터에서 더 잘 동작하는 다양한 옵티마이저가 있음.
+<br><br>
 <br>loss.backwards() 를 호출하여 예측 손실을 역전파함. PyTorch 는 각 매개변수에 대한 손실의 변화도를 저장함.
 <br>변화도를 계산한 뒤에는 optimizer.step() 을 호출하여 역전파 단계에서 수집된 변화도로 매개변수를 조정함.
 <br>optimizer.zero_grad() 를 호출하여 모델 매개변수의 변화도를 재설정함. 기본적으로 변화도는 더해지기 때문에 중복 계산을 막기 위해 반복할 때마다 명시적으로 0으로 설정함.
-]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 16:58:10 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 17:09:48 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.05 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : GAN 모델로 이미지 생성 모델 실습
-<br><br><br>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:08:14 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+<br><br><br><br>
+<br>GAN(Generative Adversarial Networks) 은 적대적 생성 신경망이라고 불리며, 실제에 가까운 이미지나 사람이 쓴 것과 같은 글 등 여러 가짜 데이터들을 생성하는 딥러닝 기반 모델.
+<br>서로 다른 2개의 네트워크인 생성모델 (Generator) 과 판별모델 (Discriminator) 을 적대적으로 학습시키며 실제 데이터와 비슷한 데이터를 생성해내는 모델.
+<br>생성된 데이터에 정해진 레이블 값이 없기 때문에 비지도 학습 기반 생성 모델로 분류됨.
+<br>생성 모델의 목적은 진짜 분포에 가까운 가짜 분포를 생성하는 것이고, 판별 모델의 목적은 표본이 가짜 분포에 속하는지 진짜 분포에 속하는지를 결정하는 것임.
+<br>GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 가까 데이터를 생성하는 것이따라서 판별 모델이 진짜인지 가짜인지를 한쪽으로 판단하지 못하는 경계, 즉 가짜와 진짜를 0과 1로 보았을 때 0.5 값의 위치에서 가짜 와 진짜를 구별할 수 없는 최적해로 간주하게 됨.
+<br><br><img alt="GAN의 아키텍처.png" src="lib\media\gan의-아키텍처.png"><br>
+(출처 : Hamed Alqahtani. 2019. An Analysis Of Evaluation Metric Of GANs)<br>
+<br>생성 모델 (G) 는 실제 데이터와 비슷한 데이터를 만들어내도록 학습되며, 판별 모델 (D) 는 실제 데이터와 생성 모델이 생성한 가짜 데이터를 구별하도록 학습됨.
+<br>GAN 의 목적 함수는 게임 이론 타입의 목적 함수로 G, D 2명의 플레이어가 싸우면서 서로 균형점을 찾아가도록 하는 방식임.
+<br><img alt="GAN Value Function.png" src="lib\media\gan-value-function.png"><br>
+<br>여기서 V(D,G) 의 값은 확률값으로 도출됨.
+<br>이 수식을 D 의 관점에서 살펴보면 실제 데이터 x를 입력하면 D(x) 가 커지면서 log 값이 커져 높은 확률값이 나오도록 하고, 가짜 데이터 G(z) 를 입력하면 log 값이 작아짐에 따라 낮은 확률값이 나오도록 학습됨. 즉 실제 데이터와 G 가 만든 가짜 데이터를 잘 구분하도록 조금씩 업데이트되는 것.
+<br>이 수식을 G 의 관점에서 살펴보면 Zero-Mean Gaussian 분포에서 노이즈 z 를 멀레이어 퍼셉트론에 통과시켜 샘플들을 생성하며 이 생성된 가짜 데이터 G(z) 를 D 에 입력했을 때 실제 데이터처럼 확률이 높게 나오도록 학습됨. D(G(z)) 값이 높아지고 전체 확률값이 낮아지도록, 즉 G 가 D가 잘 구분하지 못하는 데이터를 생성하도록 조금씩 업데이트되는 것.
+<br>실제 학습을 진행할 때 2개의 네트워크를 동시에 학습시키지 않고 하나의 네트워크를 고정한 상태에서 다른 한 네트워크를 업데이트하는 방식으로 따로따로 업데이트함.
+<br><br><br>import torch
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from torch.utils.data import Subset
+import torch
+import torch.nn as nn
+import torch.optim as optim
+복사<br><br># 필요한 라이브러리 import
+import os
+import zipfile
+
+# 파일 다운로드
+!wget https://daiv-cnu.duckdns.org/contest/ai_competition[2024]_basic/dataset/datasets.zip -O /content/datasets.zip
+
+# 압축 파일 경로
+zip_file_path = "/content/datasets.zip"
+
+# 압축 풀 위치
+extract_folder = "/content/datasets"
+
+# 압축 파일 풀기
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+&nbsp; &nbsp; zip_ref.extractall(extract_folder)
+
+# 압축이 풀린 디렉터리의 내용 확인
+print("압축이 풀린 디렉터리 내용:")
+os.listdir(extract_folder)
+복사<br><br># 데이터 전처리
+transform = transforms.Compose([
+&nbsp; &nbsp; transforms.Resize((64, 64)),
+&nbsp; &nbsp; transforms.ToTensor(),
+&nbsp; &nbsp; transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+])
+
+# 데이터셋 경로
+dataset_dir = "/content/datasets"
+
+# 데이터셋 생성
+dataset = datasets.ImageFolder(root=dataset_dir, transform=transform)
+
+# 이미지 폴더 경로 설정 (상위폴더)
+data_dir = "/content/datasets/valid"
+
+# ImageFolder 데이터셋 생성
+dataset = datasets.ImageFolder(root=data_dir, transform=transform)
+
+# 클래스 이름 확인
+class_names = dataset.classes
+print("클래스 이름:", class_names)
+복사<br># 원하는 클래스 이름
+target_classes = ['Egg'] 
+
+# 선택한 클래스의 인덱스 가져오기
+target_indices = [class_names.index(cls) for cls in target_classes]
+
+# 선택한 클래스의 인덱스를 가지는 데이터만 필터링
+selected_indices = [i for i, (_, label) in enumerate(dataset) if label in target_indices]
+
+# 서브셋 생성
+subset = Subset(dataset, selected_indices)
+
+# 데이터 로더 설정
+dataloader = DataLoader(subset, batch_size=32, shuffle=True)
+
+# 데이터셋 샘플 확인
+for images, labels in dataloader:
+&nbsp; &nbsp; print("이미지 크기:", images.size())
+&nbsp; &nbsp; print("레이블:", labels)
+&nbsp; &nbsp; break
+복사<br><br>class Generator(nn.Module):
+&nbsp; &nbsp; def __init__(self, noise_dim, num_classes, img_size):
+&nbsp; &nbsp; &nbsp; &nbsp; super(Generator, self).__init__()
+&nbsp; &nbsp; &nbsp; &nbsp; self.label_emb = nn.Embedding(num_classes, noise_dim)
+&nbsp; &nbsp; &nbsp; &nbsp; self.model = nn.Sequential(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(noise_dim * 2, 128),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(128, 256),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.BatchNorm1d(256),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(256, 512),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.BatchNorm1d(512),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(512, img_size * img_size * 3),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Tanh()
+&nbsp; &nbsp; &nbsp; &nbsp; )
+&nbsp; &nbsp; &nbsp; &nbsp; self.img_size = img_size
+
+  
+
+&nbsp; &nbsp; def forward(self, noise, labels):
+&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = self.label_emb(labels)
+&nbsp; &nbsp; &nbsp; &nbsp; x = torch.cat((noise, label_embedding), dim=1)
+&nbsp; &nbsp; &nbsp; &nbsp; img = self.model(x)
+&nbsp; &nbsp; &nbsp; &nbsp; img = img.view(img.size(0), 3, self.img_size, self.img_size)
+&nbsp; &nbsp; &nbsp; &nbsp; return img
+복사<br><br>class Discriminator(nn.Module):
+&nbsp; &nbsp; def __init__(self, num_classes, img_size):
+&nbsp; &nbsp; &nbsp; &nbsp; super(Discriminator, self).__init__()
+&nbsp; &nbsp; &nbsp; &nbsp; self.label_embedding = nn.Embedding(num_classes, img_size * img_size * 3)
+&nbsp; &nbsp; &nbsp; &nbsp; self.model = nn.Sequential(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(img_size * img_size * 3 * 2, 512),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(512, 256),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(256, 128),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(128, 1),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Sigmoid()
+&nbsp; &nbsp; &nbsp; &nbsp; )
+
+  
+
+&nbsp; &nbsp; def forward(self, img, labels):
+&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = self.label_embedding(labels)
+&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = label_embedding.view(label_embedding.size(0), -1)
+&nbsp; &nbsp; &nbsp; &nbsp; img_flat = img.view(img.size(0), -1)
+&nbsp; &nbsp; &nbsp; &nbsp; x = torch.cat((img_flat, label_embedding), dim=1)
+&nbsp; &nbsp; &nbsp; &nbsp; validity = self.model(x)
+&nbsp; &nbsp; &nbsp; &nbsp; return validity
+복사<br><br># 하이퍼파라미터 설정
+
+noise_dim = 100
+num_classes = len(class_names)
+img_size = 64
+batch_size = 32
+lr = 0.0002
+num_epochs = 500
+복사<br># 모델 초기화
+
+generator = Generator(noise_dim, num_classes, img_size).to(device)
+discriminator = Discriminator(num_classes, img_size).to(device)
+복사<br># 손실 함수 및 옵티마이저 설정
+
+adversarial_loss = nn.BCELoss()
+optimizer_G = optim.Adam(generator.parameters(), lr=lr, betas=(0.5, 0.999))
+optimizer_D = optim.Adam(discriminator.parameters(), lr=lr, betas=(0.5, 0.999))
+복사<br><br># 학습 루프
+
+for epoch in range(num_epochs):
+&nbsp; &nbsp; for i, (real_images, labels) in enumerate(dataloader):
+&nbsp; &nbsp; &nbsp; &nbsp; batch_size = real_images.size(0)
+&nbsp; &nbsp; &nbsp; &nbsp; real_images = real_images.to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; labels = labels.to(device)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 판별자 학습
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_D.zero_grad()
+&nbsp; &nbsp; &nbsp; &nbsp; real_labels = torch.ones(batch_size, 1).to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; fake_labels = torch.zeros(batch_size, 1).to(device)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 진짜 이미지 학습
+&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(real_images, labels)
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss_real = adversarial_loss(outputs, real_labels)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 가짜 이미지 학습
+&nbsp; &nbsp; &nbsp; &nbsp; noise = torch.randn(batch_size, noise_dim).to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; generated_labels = torch.randint(0, num_classes, (batch_size,)).to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; fake_images = generator(noise, generated_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(fake_images.detach(), generated_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss_fake = adversarial_loss(outputs, fake_labels)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 총 판별자 손실
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss = d_loss_real + d_loss_fake
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss.backward()
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_D.step()
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 생성자 학습
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_G.zero_grad()
+&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(fake_images, generated_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; g_loss = adversarial_loss(outputs, real_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; g_loss.backward()
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_G.step()
+
+&nbsp; &nbsp; &nbsp; &nbsp; if i % 100 == 0:
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print(f"Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{len(dataloader)}], "
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; f"D Loss: {d_loss.item()}, G Loss: {g_loss.item()}")
+복사<br><br>import matplotlib.pyplot as plt
+import numpy as np
+import torchvision
+복사<br># 생성된 이미지 시각화
+
+generator.eval()
+with torch.no_grad():
+&nbsp; &nbsp; noise = torch.randn(16, noise_dim).to(device)
+&nbsp; &nbsp; sample_labels = torch.tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5]).to(device) &nbsp;# 예시 레이블
+&nbsp; &nbsp; generated_images = generator(noise, sample_labels).cpu()
+&nbsp; &nbsp; generated_images = generated_images * 0.5 + 0.5 &nbsp;# 정규화 해제
+&nbsp; &nbsp; grid_img = np.transpose(torchvision.utils.make_grid(generated_images, nrow=4), (1, 2, 0))
+
+plt.figure(figsize=(8, 8))
+plt.imshow(grid_img)
+plt.axis('off')
+plt.show()
+복사<br><img alt="GAN 모델 egg 이미지 생성 결과.png" src="lib\media\gan-모델-egg-이미지-생성-결과.png"><br>
+위 코드를 학습 시킨 후 생성된 결과물.<br><a data-tooltip-position="top" aria-label="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank"><em></em></a>colab 링크]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:01:31 GMT</pubDate><enclosure url="lib\media\gan의-아키텍처.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\gan의-아키텍처.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.07.05 21:00 - 24:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : 모델 학습 방법 개념 정리
+<br><br><br>분석용 데이터를 이용한 가설 설정을 통하여 통계 모형을 만들거나 기계 학습(Machine Learning)을 이용한 데이터의 분류, 예측, 군집 등의 기능을 수행하는 모형을 만드는 과정이다. 주로 지도 학습과 비지도 학습 강화 학습으로 나뉘며, 모델 학습을 효과적으로 진행하기 위해서 모델 학습 전에 데이터 셋을 Training과 Testing 으로 분할한다.<br>데이터 셋에서 설명 변수를 이용하여 다양한 알고리즘을 거쳐 학습을 진행하여 그 중 가장 우수한 알고리즘을 선정하고, 일부 변수를 제외한 최적의 모델 선정 과정을 거치게 된다. 데이터에 대해 모델을 학습한다는 것은 데이터에 기반해 최적화된 모델 파라미터를 알아내는 것을 말한다.<br><br><br>데이터에 대한 Label, 즉 명시적인 정답이 주어진 상태에서 컴퓨터를 학습시키는 방법으로, (data, label) 의 형태로 학습을 진행한다.<br>
+트레이닝 데이터 셋으로 학습이 끝나면 label 이 지정되지 않은 테스트 데이터 셋을 이용해서 학습된 알고리즘이 얼마나 정확히 예측하는 지를 측정할 수 있다.<br>이 때 예측하는 결과값이 discrete value (이산값) 이면 classification (분류) 문제, 예측하는 결과값이 continuous value (연속값) 이면 regression (회귀) 문제이다.<br><br>데이터에 대한 label, 즉 명시적인 정답이 주어지지 않은 상태에서 컴퓨터를 학습시키는 방법으로, 데이터에 대한 명시적인 정답 없이 (data) 형태로 학습을 진행한다.<br>비지도 학습은 데이터의 숨겨진 특징이나 구조를 발견하는데 사용하는데, 예를 들어 데이터가 무작위로 분포되어 있을 때 이 데이터를 비슷한 특성을 가진 세 가지로 부류로 묶는 클러스터링 알고리즘이 있다.<br><br>지도 학습과 비지도 학습이 데이터가 주어진 정적인 상태에서 학습을 진행한다면, 강화 학습은 에이전트가 주어진 환경에 대해 어떤 행동을 취하고 이로부터 어떤 보상을 얻으면서 학습을 진행한다.<br>
+이 때, 에이전트는 보상을 최대화하도록 학습을 진행하기 때문에 일종의 동적인 상태에서 데이터를 수집하는 과정까지 포함된 알고리즘이다.<br>
+강화 학습의 대표적인 알고리즘은 Q-Learning 이 있다.]]></description><link>24-하계-모각코\1회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/1회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:19:50 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.07.27 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : 이미지 생성 모델, 음성 생성 모델 
+<br><br><br><br><br>초기 음성 합성에 많이 사용되었던 모델.<br>
+음성을 여러 상태(state)로 나누고 상태 간 전이 확률을 통해 음성을 생성한다. 음성의 자연스러움은 떨어지지만 구현이 상대적으로 간단하다.<br><br>음성의 확률 분포를 가우시안 혼합 분포로 모델링하여 음성을 생성한다. HMM보다 더 자연스러운 음성을 생성할 수 있지만, 활용도가 제한적이다.<br>
+이름 그대로 가우시안 분포를 여러 개 혼합하여 데이터의 복잡한 분포를 근사하기 위한 모델.<br><br><br>구글에서 개발한 모델.<br>
+음성의 시간 도메인 신호를 직접 생성한다. 매우 자연스러운 음성을 생성할 수 있으며, 많은 연구에서 높은 성능을 보이고 있다.<br><br>음성 합성의 텍스트-음성 변환(TTS) 시스템.<br>
+텍스트를 입력 받아 음성 스펙트로그램을 생성한 후 이를 음성으로 변환한다. Tacotron 2는 WaveNet과 결합하여 높은 품질의 음성을 생성할 수 있다.<br><br>트랜스포머 기반의 TTS 모델.<br>
+긴 문장에서도 안정적인 음성을 생성할 수 있다. 트랜스포머의 셀프 어텐션 메커니즘을 활용하여 문맥을 잘 반영한다.<br><br><br>음성 데이터를 벡터 양자화를 통해 압축하고, 이를 다시 복원하여 음성을 생성한다. 자연스러운 음성 합성에 적합하다.<br><br><br>멜 스펙트로그램을 음성 신호로 변환하는 GAN 기반 모델.<br>
+훈련 속도가 빠르고, 고품질의 음성을 생성할 수 있다.<br><br><br><br>초기 이미지 생성에 사용된 모델로 현재는 제한된 성능을 가진다.<br>
+이미지 데이터를 주성분으로 분해하여 저차원 공간에서 이미지를 재구성한다. <br><br>입력 이미지를 저차원 잠재 공간으로 압축한 후 이를 다시 복원하여 이미지를 생성한다. 주로 이미지 복원 및 생성에 사용된다.<br><br><br>이미지를 잠재 공간에 매핑하고, 이를 다시 이미지로 복원한다. 생성된 이미지의 다양성을 확보하기 위해 확률적 접근 방식을 사용한다.<br><br>Generator(생성모델) 과 Discriminator(판별모델) 이라는 서로 다른 2개의 네트워크로 이루어져 있으며 이 두 네트워크를 적대적으로 학습시키며 이미지를 생성한다.<br>생성모델의 목적은 진짜에 가까운 가짜를 생성하는 것이고 판별모델의 목적은 표본이 가짜인지 진짜인지 결정하는 것이다.<br>
+이 2가지 모델을 포함한 GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 데이터를 생성하는 것이며, 따라서 판별모델이 진짜인지 가짜인지 분별할 수 없는 경계에서 가짜 샘플과 실제 샘플을 구별할 수 없는 최적 솔루션으로 간주한다.<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:20:54 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.07.29 22:00 - 24:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : PyTorch 환경 설정
+<br><br><br><br>
+<br>Visual studio 2022 설치
+<br><a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택한다.
+<br>IntelliJ 또는 사용하는 IDE 를 연다.
+<br>pytorch  를 사용할 프로젝트에서 Jupyter Notebook 을 열고 %pip install torch torchvision torchaudio 를 실행한다.
+<br><br>
+<br>Visual studio 2022 설치
+<br>새 프로젝트를 생성할 때 New 와 함께 conda 가상 환경을 선택한다.
+<br>생성된 프로젝트의 터미널을 열고 <a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택하여 실행한다.
+<br><br>
+<br>Visual studio 2022 설치
+<br><a rel="noopener" class="external-link" href="https://www.anaconda.com/download" target="_blank">https://www.anaconda.com/download</a> 에서 아나콘다를 설치한다.
+<br>설치가 완료되면 PowerShell 을 열어 python --version 과 conda --version 을 실행하여 python 과 anaconda 의 버전을 확인한다.
+<br><a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 pip 가 아닌 conda 와 함께 자신과 맞는 설치 세부 정보를 선택하여 실행한다.
+<br>전부 설치가 완료되면 PowerShell 에서 다음 명령을 실행한다. 전부 실행이 되면 설치가 완료된 것이다.
+<br>python
+
+import torch
+x = torch.rand(2, 3)
+print(x)
+복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 16:23:25 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.08 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>

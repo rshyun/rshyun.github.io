@@ -11,9 +11,11 @@
             "id": "e85638fcd2d3f4e4",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "docs/lib/media"
+                "file": "24 하계 모각코/6회차 계획 및 결과.md",
+                "mode": "source",
+                "source": true
               }
             }
           }
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "24 하계 모각코/6회차 계획 및 결과.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "24 하계 모각코/6회차 계획 및 결과.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "24 하계 모각코/6회차 계획 및 결과.md"
+              }
             }
           }
         ],
@@ -155,11 +161,11 @@
   },
   "active": "e85638fcd2d3f4e4",
   "lastOpenFiles": [
+    "24 하계 모각코/6회차 계획 및 결과.md",
     "24 하계 모각코/5회차 계획 및 결과.md",
     "docs/lib/media/생성결과물.png",
     "docs/lib/media/5회차2.png",
     "docs/lib/media/5회차1.png",
-    "24 하계 모각코/6회차 계획 및 결과.md",
     "Vault.md",
     "docs/lib/media/냥2.jpg",
     "index.md",

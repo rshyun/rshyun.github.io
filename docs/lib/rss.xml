@@ -1,13 +1,8 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 10 Aug 2024 16:28:44 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 10 Aug 2024 16:28:44 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.07.31 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : Tensor 및 Pytorch
-<br>]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Sat, 10 Aug 2024 16:28:40 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 10:02:50 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 10:02:50 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.29 22:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>
-계획 : Pytorch 환경 설정
+계획 : PyTorch 환경 설정
 <br><br><br><br>
 <br>Visual studio 2022 설치
 <br><a rel="noopener" class="external-link" href="https://pytorch.org/" target="_blank">https://pytorch.org/</a> 에서 자신과 맞는 설치 세부 정보를 선택한다.
@@ -28,7 +23,120 @@
 import torch
 x = torch.rand(2, 3)
 print(x)
-복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Sat, 10 Aug 2024 16:28:08 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 07:01:29 GMT</pubDate></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.07.31 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : PyTorch
+<br><br><br><br>PyTorch 의 torchvision 라이브러리에 포함된 표준 데이터셋 중 하나인 FashionMNIST 를 사용하여 실습 진행함.<br>import torch 
+from torch.utils.data import Dataset
+from torchvision import datasets
+from torchvision.transforms import ToTensor
+import matplotlib.pyplot as plt
+복사<br>
+<br>torch : 딥러닝 프레인워크 PyTorch 를 불러오는 라이브러리.
+<br>from.torch.utils.data import Dataset : PyTorch 에서 데이터셋을 정의하기 위해 사용되는 기본 클래스인 Dataset 을 불러오며 이때 '  init  ',(초기화) '  len  ',(데이터셋의 크기 반환) '  getitem  '(인덱스를 받아 데이터를 반환) 메서드를 구현해야 함.
+<br>from torchvision import datasets : 컴퓨터 비전 작업에 자주 사용되는 여러 가지 표준 데이터셋을 제공해주는 datasets 모듈을 불러옴.
+<br>from torchvision.transforms import ToTensor : 이미지 데이터(일반적으로 PIL 이미지 또는 numpy 배열)를 PyTorch 의 텐서 형식으로 변환해주는 변환기인 ToTensor 를 불러옴. 이미지 모델 학습 과정에유용함.
+<br>import matplotlib.pyplot as plt : 파이썬에서 데이터를 시각화할 때 자주 사용되는 라이브러리인 matplotlib 의 서브패키지인 matplotlib.pyplot 를 plt 라는 약어어로 불러옴.
+<br>training_data = datasets.FashionMNIST(
+    root="data",
+    train=True,
+    download=True,
+    transform=ToTensor()
+)
+
+test_data = datasets.FashionMNIST(
+    root="data",
+    train=False,
+    download=True,
+    transform=ToTensor()
+)
+복사<br>
+<br>root="data" : root 파라미터는 데이터셋을 저장할 장소를 지정함. data 라는 폴더가 없으면 생성하여 저장함.
+<br>train=True : train 데이터셋 로드함.
+<br>train=False : test 데이터셋 로드함.
+<br>download=True : download 파라미터를 True 로 설정하면 지정된 root 에 데이터셋이 존재하지 않는 경우 인터넷에서 다운로드받음. 존재는 경우에는 다운로드를 생략하고 로컬에 있는 데이터 사용함.
+<br>transform=ToTensor() : transform(이미지), target_transform(레이블블) 파라미터는 데이터셋에 적용할 전처리 작업을 지정함. 
+<br><br>import os
+import pandas as pd
+from torchvision.io import read_image
+복사<br>
+<br>import os : 파이썬에서 운영 체제와 상호 작용하기 위한 표준 라이브러리인 os 모듈을 불러옴. 주요 기능은 파일 및 디렉터리 작업, 경로 조작, 환경 변수, 프로세스 관리 등이 있음.
+<br>import pandas as pd : 데이터 분석과 조작을 위한 pandas 라이브러리를 pd 라는 약어로 불러옴.
+<br>from torchvision.io import read_image : torchvision 라이브러리에서 제공하는 함수인 read_image 를 불러옴. 이미지를 읽는 동시에 텐서로 변환하여 파일에서 이미지를 로드할 때 사용됨.
+<br>torchvision.transforms.ToTensor() 과 torchvision.io.read_image 의 차이점<br>
+1. 입력 : 전자는 이미 메모리에 로드된 PIL 이미지 또는 numpy 배열을 텐서로 변환하고, 후자는 파일 경로에서 이미지를 읽어 텐서로 변환홤.<br>
+2. 출력 데이터 형식 : 전자는 픽셀 값을 0 ~ 1 사이의 실수형 값으로 정규화하고, 후자는 픽셀 값을 0 ~ 255 범위의 정수로 유지함.<br>
+3. 사용 시점 : 전자는 이미지가 이미 메모리에 있는 경우에 전처리 파이프라인의 일부로 사용되고, 후자는 이미지 파일을 직접 로드할 때 사용함.<br><br>tshirt1.jpg, 0
+tshirt2.jpg, 0
+......
+ankleboot999.jpg, 9
+복사<br>FashionMNIST 이미지들은 img_dir  디렉토리에 저장되고, 정답은 annotations_file csv 파일에 별도로 저장됨.<br><br>Dataset 객체가 생성될 때 한 번만 실행됨.<br>
+이미지와 주석 파일이 포함된 디렉토리와 두가지 변형을 초기화함.<br>def __init__(self, annotations_file, img_dir, transform=None, target_transform=None):
+    self.img_labels = pd.read_csv(annotations_file)
+    self.img_dir = img_dir
+    self.transform = transform
+    self.target_transform = target_transform
+복사<br>
+<br>transform=None : 입력 이미지에 적용할 전처리 변환으로 기본값은 None 이며, 이는 변환을 적용하지 않음을 의미함.
+<br>target_transform=None : 레이블에 적용할 전처리 변환으로 기본값은 None 임.
+<br>self.img_labels = pd.read_csv(annotations_file) : pandas 라이브러리를 사용해 주어진 annotations_file 경로에서 CSV 파일을 읽어와 self.img_labels 라는 인스턴스 변수에 저장함.
+<br><br>데이터셋의 샘플 개수를 반환함.<br>def __len__(self):
+    return len(self.img_labels)
+복사<br><br>주어진 인덱스 idx 에 해당하는 샘플을 데이터셋에서 불러오고 반환함.<br>
+인덱스를 기반으로, 디스크에서 이미지의 위치를 식별하고, read_image 를 사용하여 이미지를 텐서로 변환하고 self.img_labels 의 csv 데이터로부터 해당하는 레이블을 가져오고, 해당하는 경우 변형 함수들을 호출한 뒤 텐서 이미지와 라벨을 Python dict 형식으로 반환함.<br>def __getitem__(self, idx):
+    img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0])
+    image = read_image(img_path)
+    label = self.img_labels.iloc[idx, 1]
+    if self.transform:
+        image = self.transform(image)
+    if self.target_transform:
+        label = self.target_transform(label)
+    sample = {"image": image, "label": label}
+    return sample
+복사<br>
+<br>img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0]) : self.img_labels 데이터프레임의 idx 번째 행의 첫 번째 열에 있는 값을 가져와 이미지 파일이 저장된 디렉토리 경로와 이미지 파일의 이름을 결합하여 전체 이미지 경로를 생성함.
+<br>image = read_image(img_path) : 지정된 경로에 있는 이미지 파일을 읽어와 PyTorch 의 [C(채널), H(높이), W(너비)]  형태의 3차원 텐서로 변환해줌.
+<br>sample = {"image": image, "label": label} : "image" 와 "label" 은 각각 전처가 적용된 이미지 텐서와 레이블을 저장함.
+<br><br>from torch.utils.data import DataLoader
+
+train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
+test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
+복사<br>
+<br>from torch.utils.data import DataLoader : 
+<br>batch_size=64 : batch 의 크기를 지정함. 여기서는 64로 설정되어 있어, DataLoader 는 매번 64개의 샘플을 한 배치로 묶어 모델에 전달함. batch 크기를 늘리면 병렬 처리 효율이 높아지지만, 메모리 사용량도 증가함.
+<br>shuffle=True : 데이터 셔플링 여부를 설정함. True 로 설정하면, 각 epoch 가 시작될 때 데이터가 무작위로 섞임. 이는 학습 중 모델이 데이터 순서에 의존하지 않도록 하여 일반화 성능을 높이는 데 도움이 됨.
+<br><br>device = (
+    "cuda"
+    if torch.cuda.is_available()
+    else "mps"
+    if torch.backends.mps.is_available()
+    else "cpu"
+)
+print(f"Using {device} device")
+복사<br><br><br>learning_rate = 1e-3
+batch_size = 64
+epochs = 5
+복사<br>
+<br>learning_rate : 학습률. 각 배치/에폭에서 모델의 매개변수를 조절하는 비율. 값이 작을수록 학습 속도가 느려지고, 값이 크면 학습 중 예측할 수 없는 동작이 발생할 수 있음.
+<br>batch_size : 배치 크기. 매개 변수가 갱신되기 전 신경망을 통해 전파된 데이터 샘플의 수.
+<br>epochs : 에폭 수. 데이터셋을 반복하는 횟수.
+<br><br>하이퍼파라미터를 설정한 뒤에는 최적화 단계를 통해 모델을 학습하고 최적화할 수 있음. 최적화 단계의 각 반복을 에폭이라고 부르며, 하나의 에폭은 아래의 두 부분을 구성됨.<br><br>train 데이터셋을 반복하고 최적의 매개변수로 수렴함.<br><br>train 데이터를 제공하면, 학습되지 않은 신경망은 정답을 제공하지 않을 확률이 높음. 손실 함수는 획득한 결과와 실제 값 사이의 틀린 정도를 측정하며, 학습 중에 이 값을 최소화하려고 함. 주어진 데이터 샘플을 입력으로 계산한 예측과 정답을 비교하여 손실을 계산함.<br>일반적인 손실 함수에는 회귀 문제에 사용하는 nn.MSELoss(평균 제곱 오차) 나 분류에서 사용하는 nn.NLLLoss(음의 로그 우도), 그리고 nn.LogSoftmax 와 nn.NLLLoss 를 합친 nn.CrossEntropyLoss(교차 엔트로피) 등이 있음.<br>loss_fn = nn.CrossEntropyLoss()
+복사<br><br>최적화는 각 학습 단계에서 모델의 오류를 줄이기 위해 모델 매개변수를 조정하는 과정임. 최적화 알고리즘은 이 과정이 수행되는 방식을 정의함. 모든 최적화 절차는 optimizer 객체에 캡슐화됨.<br>optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+복사<br>여기서는 SGD(확률적 경사 하강법 Stochastic Gradient Descent) 옵티마이저를 사용하고 있으며, PyTorch 에는 ADAM 이마 RMSProp 와 같은 다른 종류의 모델과 데이터에서 더 잘 동작하는 다양한 옵티마이저가 있음.<br><br>
+<br>loss.backwards() 를 호출하여 예측 손실을 역전파함. PyTorch 는 각 매개변수에 대한 손실의 변화도를 저장함.
+<br>변화도를 계산한 뒤에는 optimizer.step() 을 호출하여 역전파 단계에서 수집된 변화도로 매개변수를 조정함.
+<br>optimizer.zero_grad() 를 호출하여 모델 매개변수의 변화도를 재설정함. 기본적으로 변화도는 더해지기 때문에 중복 계산을 막기 위해 반복할 때마다 명시적으로 0으로 설정함.
+<br><br>모델 성능이 개선되고 있는지를 확인하기 위해 테스트 데이터셋을 반복함.]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:02:33 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+ <br><br>
+1회차 (07/05) : 모델 학습 방법 개념 정리<br>
+2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>
+3회차 (07/29) : PyTorch 환경 설정<br>
+4회차 (07/31) : PyTorch<br>
+5회차 (08/05) : GAN 모델로 이미지 생성 모델 실습 (1)<br>
+6회차 (08/08) : GAN 모델로 이미지 생성 모델 실습 (2)
+]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Thu, 15 Aug 2024 07:01:22 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.05 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -38,15 +146,7 @@ print(x)
 날짜 : 2024.08.08 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : GAN 모델로 이미지 생성 모델 실습 (2)
-<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 08 Aug 2024 06:10:58 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
- <br><br>
-1회차 (07/05) : 모델 학습 방법 개념 정리<br>
-2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>
-3회차 (07/29) : Pytorch 환경 설정<br>
-4회차 (07/31) : Tensor 및 Pytorch<br>
-5회차 (08/05) : GAN 모델로 이미지 생성 모델 실습 (1)<br>
-6회차 (08/08) : GAN 모델로 이미지 생성 모델 실습 (2)
-]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Thu, 08 Aug 2024 06:15:30 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
+<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 08 Aug 2024 06:10:58 GMT</pubDate></item><item><title><![CDATA[2회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.27 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>

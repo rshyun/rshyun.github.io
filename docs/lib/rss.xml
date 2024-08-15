@@ -1,9 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:23:53 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:23:52 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.08 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 이미지 생성 모델 및 Image Inpainting 기술
-<br><br><img alt="냥2.jpg" src="lib\media\냥2.jpg">]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:23:31 GMT</pubDate><enclosure url="lib\media\냥2.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\냥2.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:26:05 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:26:05 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.05 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -14,11 +9,11 @@
 <br>생성된 데이터에 정해진 레이블 값이 없기 때문에 비지도 학습 기반 생성 모델로 분류됨.
 <br>생성 모델의 목적은 진짜 분포에 가까운 가짜 분포를 생성하는 것이고, 판별 모델의 목적은 표본이 가짜 분포에 속하는지 진짜 분포에 속하는지를 결정하는 것임.
 <br>GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 가까 데이터를 생성하는 것이따라서 판별 모델이 진짜인지 가짜인지를 한쪽으로 판단하지 못하는 경계, 즉 가짜와 진짜를 0과 1로 보았을 때 0.5 값의 위치에서 가짜 와 진짜를 구별할 수 없는 최적해로 간주하게 됨.
-<br><br><img alt="GAN의_아키텍처.png" src="lib\media\gan의_아키텍처.png"><br>
+<br><br><img alt="GAN의아키텍처.png" src="lib\media\gan의아키텍처.png"><br>
 (출처 : Hamed Alqahtani. 2019. An Analysis Of Evaluation Metric Of GANs)<br>
 <br>생성 모델 (G) 는 실제 데이터와 비슷한 데이터를 만들어내도록 학습되며, 판별 모델 (D) 는 실제 데이터와 생성 모델이 생성한 가짜 데이터를 구별하도록 학습됨.
 <br>GAN 의 목적 함수는 게임 이론 타입의 목적 함수로 G, D 2명의 플레이어가 싸우면서 서로 균형점을 찾아가도록 하는 방식임.
-<br><img alt="GAN_Value_Function.png" src="lib\media\gan_value_function.png"><br>
+<br><img alt="GANValueFunction.png" src="lib\media\ganvaluefunction.png"><br>
 <br>여기서 V(D,G) 의 값은 확률값으로 도출됨.
 <br>이 수식을 D 의 관점에서 살펴보면 실제 데이터 x를 입력하면 D(x) 가 커지면서 log 값이 커져 높은 확률값이 나오도록 하고, 가짜 데이터 G(z) 를 입력하면 log 값이 작아짐에 따라 낮은 확률값이 나오도록 학습됨. 즉 실제 데이터와 G 가 만든 가짜 데이터를 잘 구분하도록 조금씩 업데이트되는 것.
 <br>이 수식을 G 의 관점에서 살펴보면 Zero-Mean Gaussian 분포에서 노이즈 z 를 멀레이어 퍼셉트론에 통과시켜 샘플들을 생성하며 이 생성된 가짜 데이터 G(z) 를 D 에 입력했을 때 실제 데이터처럼 확률이 높게 나오도록 학습됨. D(G(z)) 값이 높아지고 전체 확률값이 낮아지도록, 즉 G 가 D가 잘 구분하지 못하는 데이터를 생성하도록 조금씩 업데이트되는 것.
@@ -213,8 +208,13 @@ plt.figure(figsize=(8, 8))
 plt.imshow(grid_img)
 plt.axis('off')
 plt.show()
-복사<br><img alt="GAN_모델_egg_이미지_생성_결과.png" src="lib\media\gan_모델_egg_이미지_생성_결과.png"><br>
-위 코드를 학습 시킨 후 생성된 결과물.<br><a data-tooltip-position="top" aria-label="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank"><em></em></a>colab 링크]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:19:28 GMT</pubDate><enclosure url="lib\media\gan의_아키텍처.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\gan의_아키텍처.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
+복사<br><img alt="GAN모델egg이미지생성결과.png" src="lib\media\gan모델egg이미지생성결과.png"><br>
+위 코드를 학습 시킨 후 생성된 결과물.<br><a data-tooltip-position="top" aria-label="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank"><em></em></a>colab 링크]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:25:53 GMT</pubDate><enclosure url="lib\media\gan의아키텍처.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\gan의아키텍처.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.08 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : 이미지 생성 모델 및 Image Inpainting 기술
+<br><br><img alt="냥2.jpg" src="lib\media\냥2.jpg">]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:23:31 GMT</pubDate><enclosure url="lib\media\냥2.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\냥2.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.31 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>

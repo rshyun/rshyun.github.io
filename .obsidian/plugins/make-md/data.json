@@ -42,10 +42,7 @@
   "expandedSpaces": [
     "//24 하계 모각코",
     "/",
-    "//Tags",
-    "//docs",
-    "//docs/docs/lib",
-    "//docs/docs/lib/docs/lib/media"
+    "//Tags"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

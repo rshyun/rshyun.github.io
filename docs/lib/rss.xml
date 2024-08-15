@@ -1,4 +1,9 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:19:56 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:19:55 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:23:53 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:23:52 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.08 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : 이미지 생성 모델 및 Image Inpainting 기술
+<br><br><img alt="냥2.jpg" src="lib\media\냥2.jpg">]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:23:31 GMT</pubDate><enclosure url="lib\media\냥2.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\냥2.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.05 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -443,12 +448,7 @@ train 데이터를 제공하면, 학습되지 않은 신경망은 정답을 제�
 import torch
 x = torch.rand(2, 3)
 print(x)
-복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 16:23:25 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.08 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 이미지 생성 모델 및 Image Inpainting 기술
-<br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:06:54 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 16:23:25 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
  <br><br>
 1회차 (07/05) : 모델 학습 방법 개념 정리<br>
 2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>

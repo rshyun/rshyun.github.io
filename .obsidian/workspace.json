@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "24 하계 모각코/4회차 계획 및 결과.md",
+                "file": "24 하계 모각코/6회차 계획 및 결과.md",
                 "mode": "source",
                 "source": true
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "24 하계 모각코/4회차 계획 및 결과.md",
+                "file": "24 하계 모각코/회고.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "24 하계 모각코/4회차 계획 및 결과.md",
+                "file": "24 하계 모각코/회고.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "24 하계 모각코/4회차 계획 및 결과.md"
+                "file": "24 하계 모각코/회고.md"
               }
             }
           }
@@ -159,11 +159,52 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "e85638fcd2d3f4e4",
+  "floating": {
+    "id": "329c457163478373",
+    "type": "floating",
+    "children": [
+      {
+        "id": "b5396ab55bfc2dc3",
+        "type": "window",
+        "children": [
+          {
+            "id": "3635468a610ca596",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "18aec03758c1f64f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "24 하계 모각코/회고.md",
+                    "mode": "source",
+                    "source": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 402,
+        "y": 518,
+        "width": 902,
+        "height": 502,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "18aec03758c1f64f",
   "lastOpenFiles": [
-    "24 하계 모각코/4회차 계획 및 결과.md",
     "24 하계 모각코/6회차 계획 및 결과.md",
+    "24 하계 모각코/회고.md",
+    "24 하계 모각코/3회차 계획 및 결과.md",
     "24 하계 모각코/5회차 계획 및 결과.md",
+    "24 하계 모각코/4회차 계획 및 결과.md",
+    "24 하계 모각코/2회차 계획 및 결과.md",
+    "24 하계 모각코/1회차 계획 및 결과.md",
     "docs/lib/media/생성결과물.png",
     "docs/lib/media/5회차2.png",
     "docs/lib/media/5회차1.png",
@@ -172,11 +213,8 @@
     "index.md",
     "Tags",
     "docs/lib/media/GAN모델egg이미지생성결과.png",
-    "24 하계 모각코/3회차 계획 및 결과.md",
     "docs/lib/media/GANValueFunction.png",
     "docs/lib/media/GAN의아키텍처.png",
-    "24 하계 모각코/2회차 계획 및 결과.md",
-    "24 하계 모각코/1회차 계획 및 결과.md",
     "desktop.ini",
     "docs/lib/styles/other-plugins.css",
     "docs/24-하계-모각코/6회차-계획-및-결과.html",

@@ -1,9 +1,218 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 18 Aug 2024 15:31:37 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 18 Aug 2024 15:31:37 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 18 Aug 2024 15:41:15 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 18 Aug 2024 15:41:15 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.05 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : GAN 모델로 이미지 생성 모델 실습
+<br><br><br><br>
+<br>GAN(Generative Adversarial Networks) 은 적대적 생성 신경망이라고 불리며, 실제에 가까운 이미지나 사람이 쓴 것과 같은 글 등 여러 가짜 데이터들을 생성하는 딥러닝 기반 모델.
+<br>서로 다른 2개의 네트워크인 생성모델 (Generator) 과 판별모델 (Discriminator) 을 적대적으로 학습시키며 실제 데이터와 비슷한 데이터를 생성해내는 모델.
+<br>생성된 데이터에 정해진 레이블 값이 없기 때문에 비지도 학습 기반 생성 모델로 분류됨.
+<br>생성 모델의 목적은 진짜 분포에 가까운 가짜 분포를 생성하는 것이고, 판별 모델의 목적은 표본이 가짜 분포에 속하는지 진짜 분포에 속하는지를 결정하는 것임.
+<br>GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 가까 데이터를 생성하는 것이따라서 판별 모델이 진짜인지 가짜인지를 한쪽으로 판단하지 못하는 경계, 즉 가짜와 진짜를 0과 1로 보았을 때 0.5 값의 위치에서 가짜 와 진짜를 구별할 수 없는 최적해로 간주하게 됨.
+<br><br><img alt="5회차1.png" src="lib\media\5회차1.png"><br>(출처 : Hamed Alqahtani. 2019. An Analysis Of Evaluation Metric Of GANs)<br>
+<br>생성 모델 (G) 는 실제 데이터와 비슷한 데이터를 만들어내도록 학습되며, 판별 모델 (D) 는 실제 데이터와 생성 모델이 생성한 가짜 데이터를 구별하도록 학습됨.
+<br>GAN 의 목적 함수는 게임 이론 타입의 목적 함수로 G, D 2명의 플레이어가 싸우면서 서로 균형점을 찾아가도록 하는 방식임.
+<br><img alt="5회차2.png" src="lib\media\5회차2.png"><br>
+<br>여기서 V(D,G) 의 값은 확률값으로 도출됨.
+<br>이 수식을 D 의 관점에서 살펴보면 실제 데이터 x를 입력하면 D(x) 가 커지면서 log 값이 커져 높은 확률값이 나오도록 하고, 가짜 데이터 G(z) 를 입력하면 log 값이 작아짐에 따라 낮은 확률값이 나오도록 학습됨. 즉 실제 데이터와 G 가 만든 가짜 데이터를 잘 구분하도록 조금씩 업데이트되는 것.
+<br>이 수식을 G 의 관점에서 살펴보면 Zero-Mean Gaussian 분포에서 노이즈 z 를 멀레이어 퍼셉트론에 통과시켜 샘플들을 생성하며 이 생성된 가짜 데이터 G(z) 를 D 에 입력했을 때 실제 데이터처럼 확률이 높게 나오도록 학습됨. D(G(z)) 값이 높아지고 전체 확률값이 낮아지도록, 즉 G 가 D가 잘 구분하지 못하는 데이터를 생성하도록 조금씩 업데이트되는 것.
+<br>실제 학습을 진행할 때 2개의 네트워크를 동시에 학습시키지 않고 하나의 네트워크를 고정한 상태에서 다른 한 네트워크를 업데이트하는 방식으로 따로따로 업데이트함.
+<br><br><br>import torch
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from torch.utils.data import Subset
+import torch
+import torch.nn as nn
+import torch.optim as optim
+복사<br><br># 필요한 라이브러리 import
+import os
+import zipfile
+
+# 파일 다운로드
+!wget https://daiv-cnu.duckdns.org/contest/ai_competition[2024]_basic/dataset/datasets.zip -O /content/datasets.zip
+
+# 압축 파일 경로
+zip_file_path = "/content/datasets.zip"
+
+# 압축 풀 위치
+extract_folder = "/content/datasets"
+
+# 압축 파일 풀기
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+&nbsp; &nbsp; zip_ref.extractall(extract_folder)
+
+# 압축이 풀린 디렉터리의 내용 확인
+print("압축이 풀린 디렉터리 내용:")
+os.listdir(extract_folder)
+복사<br><br># 데이터 전처리
+transform = transforms.Compose([
+&nbsp; &nbsp; transforms.Resize((64, 64)),
+&nbsp; &nbsp; transforms.ToTensor(),
+&nbsp; &nbsp; transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+])
+
+# 데이터셋 경로
+dataset_dir = "/content/datasets"
+
+# 데이터셋 생성
+dataset = datasets.ImageFolder(root=dataset_dir, transform=transform)
+
+# 이미지 폴더 경로 설정 (상위폴더)
+data_dir = "/content/datasets/valid"
+
+# ImageFolder 데이터셋 생성
+dataset = datasets.ImageFolder(root=data_dir, transform=transform)
+
+# 클래스 이름 확인
+class_names = dataset.classes
+print("클래스 이름:", class_names)
+복사<br># 원하는 클래스 이름
+target_classes = ['Egg'] 
+
+# 선택한 클래스의 인덱스 가져오기
+target_indices = [class_names.index(cls) for cls in target_classes]
+
+# 선택한 클래스의 인덱스를 가지는 데이터만 필터링
+selected_indices = [i for i, (_, label) in enumerate(dataset) if label in target_indices]
+
+# 서브셋 생성
+subset = Subset(dataset, selected_indices)
+
+# 데이터 로더 설정
+dataloader = DataLoader(subset, batch_size=32, shuffle=True)
+
+# 데이터셋 샘플 확인
+for images, labels in dataloader:
+&nbsp; &nbsp; print("이미지 크기:", images.size())
+&nbsp; &nbsp; print("레이블:", labels)
+&nbsp; &nbsp; break
+복사<br><br>class Generator(nn.Module):
+&nbsp; &nbsp; def __init__(self, noise_dim, num_classes, img_size):
+&nbsp; &nbsp; &nbsp; &nbsp; super(Generator, self).__init__()
+&nbsp; &nbsp; &nbsp; &nbsp; self.label_emb = nn.Embedding(num_classes, noise_dim)
+&nbsp; &nbsp; &nbsp; &nbsp; self.model = nn.Sequential(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(noise_dim * 2, 128),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(128, 256),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.BatchNorm1d(256),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(256, 512),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.BatchNorm1d(512),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(512, img_size * img_size * 3),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Tanh()
+&nbsp; &nbsp; &nbsp; &nbsp; )
+&nbsp; &nbsp; &nbsp; &nbsp; self.img_size = img_size
+
+&nbsp; &nbsp; def forward(self, noise, labels):
+&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = self.label_emb(labels)
+&nbsp; &nbsp; &nbsp; &nbsp; x = torch.cat((noise, label_embedding), dim=1)
+&nbsp; &nbsp; &nbsp; &nbsp; img = self.model(x)
+&nbsp; &nbsp; &nbsp; &nbsp; img = img.view(img.size(0), 3, self.img_size, self.img_size)
+&nbsp; &nbsp; &nbsp; &nbsp; return img
+복사<br><br>class Discriminator(nn.Module):
+&nbsp; &nbsp; def __init__(self, num_classes, img_size):
+&nbsp; &nbsp; &nbsp; &nbsp; super(Discriminator, self).__init__()
+&nbsp; &nbsp; &nbsp; &nbsp; self.label_embedding = nn.Embedding(num_classes, img_size * img_size * 3)
+&nbsp; &nbsp; &nbsp; &nbsp; self.model = nn.Sequential(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(img_size * img_size * 3 * 2, 512),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(512, 256),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(256, 128),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(128, 1),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Sigmoid()
+&nbsp; &nbsp; &nbsp; &nbsp; )
+
+&nbsp; &nbsp; def forward(self, img, labels):
+&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = self.label_embedding(labels)
+&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = label_embedding.view(label_embedding.size(0), -1)
+&nbsp; &nbsp; &nbsp; &nbsp; img_flat = img.view(img.size(0), -1)
+&nbsp; &nbsp; &nbsp; &nbsp; x = torch.cat((img_flat, label_embedding), dim=1)
+&nbsp; &nbsp; &nbsp; &nbsp; validity = self.model(x)
+&nbsp; &nbsp; &nbsp; &nbsp; return validity
+복사<br><br># 하이퍼파라미터 설정
+
+noise_dim = 100
+num_classes = len(class_names)
+img_size = 64
+batch_size = 32
+lr = 0.0002
+num_epochs = 500
+복사<br># 모델 초기화
+
+generator = Generator(noise_dim, num_classes, img_size).to(device)
+discriminator = Discriminator(num_classes, img_size).to(device)
+복사<br># 손실 함수 및 옵티마이저 설정
+
+adversarial_loss = nn.BCELoss()
+optimizer_G = optim.Adam(generator.parameters(), lr=lr, betas=(0.5, 0.999))
+optimizer_D = optim.Adam(discriminator.parameters(), lr=lr, betas=(0.5, 0.999))
+복사<br><br># 학습 루프
+
+for epoch in range(num_epochs):
+&nbsp; &nbsp; for i, (real_images, labels) in enumerate(dataloader):
+&nbsp; &nbsp; &nbsp; &nbsp; batch_size = real_images.size(0)
+&nbsp; &nbsp; &nbsp; &nbsp; real_images = real_images.to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; labels = labels.to(device)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 판별자 학습
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_D.zero_grad()
+&nbsp; &nbsp; &nbsp; &nbsp; real_labels = torch.ones(batch_size, 1).to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; fake_labels = torch.zeros(batch_size, 1).to(device)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 진짜 이미지 학습
+&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(real_images, labels)
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss_real = adversarial_loss(outputs, real_labels)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 가짜 이미지 학습
+&nbsp; &nbsp; &nbsp; &nbsp; noise = torch.randn(batch_size, noise_dim).to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; generated_labels = torch.randint(0, num_classes, (batch_size,)).to(device)
+&nbsp; &nbsp; &nbsp; &nbsp; fake_images = generator(noise, generated_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(fake_images.detach(), generated_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss_fake = adversarial_loss(outputs, fake_labels)
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 총 판별자 손실
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss = d_loss_real + d_loss_fake
+&nbsp; &nbsp; &nbsp; &nbsp; d_loss.backward()
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_D.step()
+
+&nbsp; &nbsp; &nbsp; &nbsp; # 생성자 학습
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_G.zero_grad()
+&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(fake_images, generated_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; g_loss = adversarial_loss(outputs, real_labels)
+&nbsp; &nbsp; &nbsp; &nbsp; g_loss.backward()
+&nbsp; &nbsp; &nbsp; &nbsp; optimizer_G.step()
+
+&nbsp; &nbsp; &nbsp; &nbsp; if i % 100 == 0:
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print(f"Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{len(dataloader)}], "
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; f"D Loss: {d_loss.item()}, G Loss: {g_loss.item()}")
+복사<br><br>import matplotlib.pyplot as plt
+import numpy as np
+import torchvision
+복사<br># 생성된 이미지 시각화
+
+generator.eval()
+with torch.no_grad():
+&nbsp; &nbsp; noise = torch.randn(16, noise_dim).to(device)
+&nbsp; &nbsp; sample_labels = torch.tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5]).to(device) &nbsp;# 예시 레이블
+&nbsp; &nbsp; generated_images = generator(noise, sample_labels).cpu()
+&nbsp; &nbsp; generated_images = generated_images * 0.5 + 0.5 &nbsp;# 정규화 해제
+&nbsp; &nbsp; grid_img = np.transpose(torchvision.utils.make_grid(generated_images, nrow=4), (1, 2, 0))
+
+plt.figure(figsize=(8, 8))
+plt.imshow(grid_img)
+plt.axis('off')
+plt.show()
+복사<br><img alt="생성결과물.png" src="lib\media\생성결과물.png"><br>위 코드를 학습 시킨 후 생성된 결과물.<br><a rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank">https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing</a>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:41:07 GMT</pubDate><enclosure url="lib\media\5회차1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\5회차1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.08 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
 계획 : 이미지 생성 모델 및 Image Inpainting 기술
-<br><br><br><br><br><br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:13:50 GMT</pubDate></item><item><title><![CDATA[회고]]></title><description><![CDATA[ 
+<br><br><br><br><br><br><br><a rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1V3PdWaPkBbWTQp3nwsqEVwPKWuKOgJsG?usp=sharing" target="_blank">https://colab.research.google.com/drive/1V3PdWaPkBbWTQp3nwsqEVwPKWuKOgJsG?usp=sharing</a>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:40:51 GMT</pubDate></item><item><title><![CDATA[회고]]></title><description><![CDATA[ 
  <br>모각코 활동을 진행하면서 자칫하면 그냥 시간을 허비할 수도 있었던 방학을 알차게 보낼 수 있었다. 직접 목표를 세우고 날짜에 맞춰서 계획을 짜니 혼자 하는 것보다 계획에 맞춘 진행이 수월했다. 물론 자체적으로 진행하다 보니 막히는 부분도 많았고 엉뚱한 방향으로 나아가기도 했지만, 그런 부분들이 내가 배우고 성장할 수 있는 기회였다. 또한 그냥 공부하고 프로젝트를 진행하는 것이 아니라 블로그를 작성하면서 내가 공부할 내용을 미리 계획하고 그 결과물을 작성하는 것이 성장에 더욱 도움이 된다는 것을 알 수 있는 시간이었다. 기회가 된다면 다음 모각코 활동에도 참여해 더 성장하고 싶다.]]></description><link>24-하계-모각코\회고.html</link><guid isPermaLink="false">24 하계 모각코/회고.md</guid><pubDate>Sun, 18 Aug 2024 15:31:29 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.29 22:00 - 24:00<br>
@@ -217,216 +426,7 @@ train 데이터를 제공하면, 학습되지 않은 신경망은 정답을 제�
 <br>loss.backwards() 를 호출하여 예측 손실을 역전파함. PyTorch 는 각 매개변수에 대한 손실의 변화도를 저장함.
 <br>변화도를 계산한 뒤에는 optimizer.step() 을 호출하여 역전파 단계에서 수집된 변화도로 매개변수를 조정함.
 <br>optimizer.zero_grad() 를 호출하여 모델 매개변수의 변화도를 재설정함. 기본적으로 변화도는 더해지기 때문에 중복 계산을 막기 위해 반복할 때마다 명시적으로 0으로 설정함.
-]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Fri, 16 Aug 2024 11:04:12 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.05 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : GAN 모델로 이미지 생성 모델 실습
-<br><br><br><br>
-<br>GAN(Generative Adversarial Networks) 은 적대적 생성 신경망이라고 불리며, 실제에 가까운 이미지나 사람이 쓴 것과 같은 글 등 여러 가짜 데이터들을 생성하는 딥러닝 기반 모델.
-<br>서로 다른 2개의 네트워크인 생성모델 (Generator) 과 판별모델 (Discriminator) 을 적대적으로 학습시키며 실제 데이터와 비슷한 데이터를 생성해내는 모델.
-<br>생성된 데이터에 정해진 레이블 값이 없기 때문에 비지도 학습 기반 생성 모델로 분류됨.
-<br>생성 모델의 목적은 진짜 분포에 가까운 가짜 분포를 생성하는 것이고, 판별 모델의 목적은 표본이 가짜 분포에 속하는지 진짜 분포에 속하는지를 결정하는 것임.
-<br>GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 가까 데이터를 생성하는 것이따라서 판별 모델이 진짜인지 가짜인지를 한쪽으로 판단하지 못하는 경계, 즉 가짜와 진짜를 0과 1로 보았을 때 0.5 값의 위치에서 가짜 와 진짜를 구별할 수 없는 최적해로 간주하게 됨.
-<br><br><img alt="5회차1.png" src="lib\media\5회차1.png"><br>(출처 : Hamed Alqahtani. 2019. An Analysis Of Evaluation Metric Of GANs)<br>
-<br>생성 모델 (G) 는 실제 데이터와 비슷한 데이터를 만들어내도록 학습되며, 판별 모델 (D) 는 실제 데이터와 생성 모델이 생성한 가짜 데이터를 구별하도록 학습됨.
-<br>GAN 의 목적 함수는 게임 이론 타입의 목적 함수로 G, D 2명의 플레이어가 싸우면서 서로 균형점을 찾아가도록 하는 방식임.
-<br><img alt="5회차2.png" src="lib\media\5회차2.png"><br>
-<br>여기서 V(D,G) 의 값은 확률값으로 도출됨.
-<br>이 수식을 D 의 관점에서 살펴보면 실제 데이터 x를 입력하면 D(x) 가 커지면서 log 값이 커져 높은 확률값이 나오도록 하고, 가짜 데이터 G(z) 를 입력하면 log 값이 작아짐에 따라 낮은 확률값이 나오도록 학습됨. 즉 실제 데이터와 G 가 만든 가짜 데이터를 잘 구분하도록 조금씩 업데이트되는 것.
-<br>이 수식을 G 의 관점에서 살펴보면 Zero-Mean Gaussian 분포에서 노이즈 z 를 멀레이어 퍼셉트론에 통과시켜 샘플들을 생성하며 이 생성된 가짜 데이터 G(z) 를 D 에 입력했을 때 실제 데이터처럼 확률이 높게 나오도록 학습됨. D(G(z)) 값이 높아지고 전체 확률값이 낮아지도록, 즉 G 가 D가 잘 구분하지 못하는 데이터를 생성하도록 조금씩 업데이트되는 것.
-<br>실제 학습을 진행할 때 2개의 네트워크를 동시에 학습시키지 않고 하나의 네트워크를 고정한 상태에서 다른 한 네트워크를 업데이트하는 방식으로 따로따로 업데이트함.
-<br><br><br>import torch
-from torchvision import datasets, transforms
-from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
-from torch.utils.data import DataLoader
-from torch.utils.data import Subset
-import torch
-import torch.nn as nn
-import torch.optim as optim
-복사<br><br># 필요한 라이브러리 import
-import os
-import zipfile
-
-# 파일 다운로드
-!wget https://daiv-cnu.duckdns.org/contest/ai_competition[2024]_basic/dataset/datasets.zip -O /content/datasets.zip
-
-# 압축 파일 경로
-zip_file_path = "/content/datasets.zip"
-
-# 압축 풀 위치
-extract_folder = "/content/datasets"
-
-# 압축 파일 풀기
-with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-&nbsp; &nbsp; zip_ref.extractall(extract_folder)
-
-# 압축이 풀린 디렉터리의 내용 확인
-print("압축이 풀린 디렉터리 내용:")
-os.listdir(extract_folder)
-복사<br><br># 데이터 전처리
-transform = transforms.Compose([
-&nbsp; &nbsp; transforms.Resize((64, 64)),
-&nbsp; &nbsp; transforms.ToTensor(),
-&nbsp; &nbsp; transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-])
-
-# 데이터셋 경로
-dataset_dir = "/content/datasets"
-
-# 데이터셋 생성
-dataset = datasets.ImageFolder(root=dataset_dir, transform=transform)
-
-# 이미지 폴더 경로 설정 (상위폴더)
-data_dir = "/content/datasets/valid"
-
-# ImageFolder 데이터셋 생성
-dataset = datasets.ImageFolder(root=data_dir, transform=transform)
-
-# 클래스 이름 확인
-class_names = dataset.classes
-print("클래스 이름:", class_names)
-복사<br># 원하는 클래스 이름
-target_classes = ['Egg'] 
-
-# 선택한 클래스의 인덱스 가져오기
-target_indices = [class_names.index(cls) for cls in target_classes]
-
-# 선택한 클래스의 인덱스를 가지는 데이터만 필터링
-selected_indices = [i for i, (_, label) in enumerate(dataset) if label in target_indices]
-
-# 서브셋 생성
-subset = Subset(dataset, selected_indices)
-
-# 데이터 로더 설정
-dataloader = DataLoader(subset, batch_size=32, shuffle=True)
-
-# 데이터셋 샘플 확인
-for images, labels in dataloader:
-&nbsp; &nbsp; print("이미지 크기:", images.size())
-&nbsp; &nbsp; print("레이블:", labels)
-&nbsp; &nbsp; break
-복사<br><br>class Generator(nn.Module):
-&nbsp; &nbsp; def __init__(self, noise_dim, num_classes, img_size):
-&nbsp; &nbsp; &nbsp; &nbsp; super(Generator, self).__init__()
-&nbsp; &nbsp; &nbsp; &nbsp; self.label_emb = nn.Embedding(num_classes, noise_dim)
-&nbsp; &nbsp; &nbsp; &nbsp; self.model = nn.Sequential(
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(noise_dim * 2, 128),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(128, 256),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.BatchNorm1d(256),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(256, 512),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.BatchNorm1d(512),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.ReLU(inplace=True),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(512, img_size * img_size * 3),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Tanh()
-&nbsp; &nbsp; &nbsp; &nbsp; )
-&nbsp; &nbsp; &nbsp; &nbsp; self.img_size = img_size
-
-&nbsp; &nbsp; def forward(self, noise, labels):
-&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = self.label_emb(labels)
-&nbsp; &nbsp; &nbsp; &nbsp; x = torch.cat((noise, label_embedding), dim=1)
-&nbsp; &nbsp; &nbsp; &nbsp; img = self.model(x)
-&nbsp; &nbsp; &nbsp; &nbsp; img = img.view(img.size(0), 3, self.img_size, self.img_size)
-&nbsp; &nbsp; &nbsp; &nbsp; return img
-복사<br><br>class Discriminator(nn.Module):
-&nbsp; &nbsp; def __init__(self, num_classes, img_size):
-&nbsp; &nbsp; &nbsp; &nbsp; super(Discriminator, self).__init__()
-&nbsp; &nbsp; &nbsp; &nbsp; self.label_embedding = nn.Embedding(num_classes, img_size * img_size * 3)
-&nbsp; &nbsp; &nbsp; &nbsp; self.model = nn.Sequential(
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(img_size * img_size * 3 * 2, 512),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(512, 256),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(256, 128),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.LeakyReLU(0.2, inplace=True),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Linear(128, 1),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nn.Sigmoid()
-&nbsp; &nbsp; &nbsp; &nbsp; )
-
-&nbsp; &nbsp; def forward(self, img, labels):
-&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = self.label_embedding(labels)
-&nbsp; &nbsp; &nbsp; &nbsp; label_embedding = label_embedding.view(label_embedding.size(0), -1)
-&nbsp; &nbsp; &nbsp; &nbsp; img_flat = img.view(img.size(0), -1)
-&nbsp; &nbsp; &nbsp; &nbsp; x = torch.cat((img_flat, label_embedding), dim=1)
-&nbsp; &nbsp; &nbsp; &nbsp; validity = self.model(x)
-&nbsp; &nbsp; &nbsp; &nbsp; return validity
-복사<br><br># 하이퍼파라미터 설정
-
-noise_dim = 100
-num_classes = len(class_names)
-img_size = 64
-batch_size = 32
-lr = 0.0002
-num_epochs = 500
-복사<br># 모델 초기화
-
-generator = Generator(noise_dim, num_classes, img_size).to(device)
-discriminator = Discriminator(num_classes, img_size).to(device)
-복사<br># 손실 함수 및 옵티마이저 설정
-
-adversarial_loss = nn.BCELoss()
-optimizer_G = optim.Adam(generator.parameters(), lr=lr, betas=(0.5, 0.999))
-optimizer_D = optim.Adam(discriminator.parameters(), lr=lr, betas=(0.5, 0.999))
-복사<br><br># 학습 루프
-
-for epoch in range(num_epochs):
-&nbsp; &nbsp; for i, (real_images, labels) in enumerate(dataloader):
-&nbsp; &nbsp; &nbsp; &nbsp; batch_size = real_images.size(0)
-&nbsp; &nbsp; &nbsp; &nbsp; real_images = real_images.to(device)
-&nbsp; &nbsp; &nbsp; &nbsp; labels = labels.to(device)
-
-&nbsp; &nbsp; &nbsp; &nbsp; # 판별자 학습
-&nbsp; &nbsp; &nbsp; &nbsp; optimizer_D.zero_grad()
-&nbsp; &nbsp; &nbsp; &nbsp; real_labels = torch.ones(batch_size, 1).to(device)
-&nbsp; &nbsp; &nbsp; &nbsp; fake_labels = torch.zeros(batch_size, 1).to(device)
-
-&nbsp; &nbsp; &nbsp; &nbsp; # 진짜 이미지 학습
-&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(real_images, labels)
-&nbsp; &nbsp; &nbsp; &nbsp; d_loss_real = adversarial_loss(outputs, real_labels)
-
-&nbsp; &nbsp; &nbsp; &nbsp; # 가짜 이미지 학습
-&nbsp; &nbsp; &nbsp; &nbsp; noise = torch.randn(batch_size, noise_dim).to(device)
-&nbsp; &nbsp; &nbsp; &nbsp; generated_labels = torch.randint(0, num_classes, (batch_size,)).to(device)
-&nbsp; &nbsp; &nbsp; &nbsp; fake_images = generator(noise, generated_labels)
-&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(fake_images.detach(), generated_labels)
-&nbsp; &nbsp; &nbsp; &nbsp; d_loss_fake = adversarial_loss(outputs, fake_labels)
-
-&nbsp; &nbsp; &nbsp; &nbsp; # 총 판별자 손실
-&nbsp; &nbsp; &nbsp; &nbsp; d_loss = d_loss_real + d_loss_fake
-&nbsp; &nbsp; &nbsp; &nbsp; d_loss.backward()
-&nbsp; &nbsp; &nbsp; &nbsp; optimizer_D.step()
-
-&nbsp; &nbsp; &nbsp; &nbsp; # 생성자 학습
-&nbsp; &nbsp; &nbsp; &nbsp; optimizer_G.zero_grad()
-&nbsp; &nbsp; &nbsp; &nbsp; outputs = discriminator(fake_images, generated_labels)
-&nbsp; &nbsp; &nbsp; &nbsp; g_loss = adversarial_loss(outputs, real_labels)
-&nbsp; &nbsp; &nbsp; &nbsp; g_loss.backward()
-&nbsp; &nbsp; &nbsp; &nbsp; optimizer_G.step()
-
-&nbsp; &nbsp; &nbsp; &nbsp; if i % 100 == 0:
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print(f"Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{len(dataloader)}], "
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; f"D Loss: {d_loss.item()}, G Loss: {g_loss.item()}")
-복사<br><br>import matplotlib.pyplot as plt
-import numpy as np
-import torchvision
-복사<br># 생성된 이미지 시각화
-
-generator.eval()
-with torch.no_grad():
-&nbsp; &nbsp; noise = torch.randn(16, noise_dim).to(device)
-&nbsp; &nbsp; sample_labels = torch.tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5]).to(device) &nbsp;# 예시 레이블
-&nbsp; &nbsp; generated_images = generator(noise, sample_labels).cpu()
-&nbsp; &nbsp; generated_images = generated_images * 0.5 + 0.5 &nbsp;# 정규화 해제
-&nbsp; &nbsp; grid_img = np.transpose(torchvision.utils.make_grid(generated_images, nrow=4), (1, 2, 0))
-
-plt.figure(figsize=(8, 8))
-plt.imshow(grid_img)
-plt.axis('off')
-plt.show()
-복사<br><img alt="생성결과물.png" src="lib\media\생성결과물.png"><br>위 코드를 학습 시킨 후 생성된 결과물.<br><a data-tooltip-position="top" aria-label="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank"><em></em></a>colab 링크]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 18:41:42 GMT</pubDate><enclosure url="lib\media\5회차1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\5회차1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
+]]></description><link>24-하계-모각코\4회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/4회차 계획 및 결과.md</guid><pubDate>Fri, 16 Aug 2024 11:04:12 GMT</pubDate></item><item><title><![CDATA[1회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.05 21:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>

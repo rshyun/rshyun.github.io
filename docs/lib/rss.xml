@@ -1,4 +1,10 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 18 Aug 2024 15:07:36 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 18 Aug 2024 15:07:35 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 18 Aug 2024 15:31:37 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 18 Aug 2024 15:31:37 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.08 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : 이미지 생성 모델 및 Image Inpainting 기술
+<br><br><br><br><br><br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:13:50 GMT</pubDate></item><item><title><![CDATA[회고]]></title><description><![CDATA[ 
+ <br>모각코 활동을 진행하면서 자칫하면 그냥 시간을 허비할 수도 있었던 방학을 알차게 보낼 수 있었다. 직접 목표를 세우고 날짜에 맞춰서 계획을 짜니 혼자 하는 것보다 계획에 맞춘 진행이 수월했다. 물론 자체적으로 진행하다 보니 막히는 부분도 많았고 엉뚱한 방향으로 나아가기도 했지만, 그런 부분들이 내가 배우고 성장할 수 있는 기회였다. 또한 그냥 공부하고 프로젝트를 진행하는 것이 아니라 블로그를 작성하면서 내가 공부할 내용을 미리 계획하고 그 결과물을 작성하는 것이 성장에 더욱 도움이 된다는 것을 알 수 있는 시간이었다. 기회가 된다면 다음 모각코 활동에도 참여해 더 성장하고 싶다.]]></description><link>24-하계-모각코\회고.html</link><guid isPermaLink="false">24 하계 모각코/회고.md</guid><pubDate>Sun, 18 Aug 2024 15:31:29 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.29 22:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -23,12 +29,7 @@
 import torch
 x = torch.rand(2, 3)
 print(x)
-복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Fri, 16 Aug 2024 12:07:08 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.08 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 이미지 생성 모델 및 Image Inpainting 기술
-<br><br><br><br><br><br>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:07:30 GMT</pubDate></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
+복사]]></description><link>24-하계-모각코\3회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/3회차 계획 및 결과.md</guid><pubDate>Fri, 16 Aug 2024 12:07:08 GMT</pubDate></item><item><title><![CDATA[4회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.31 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>

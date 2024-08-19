@@ -5,10 +5,25 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
-  "colorGroups": [],
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:\"24 하계 모각코\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 9276414
+      }
+    },
+    {
+      "query": "file:\"index\"",
+      "color": {
+        "a": 1,
+        "rgb": 16680582
+      }
+    }
+  ],
   "collapse-display": false,
-  "showArrow": false,
+  "showArrow": true,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
@@ -18,5 +33,5 @@
   "linkStrength": 1,
   "linkDistance": 250,
   "scale": 1,
-  "close": false
+  "close": true
 }

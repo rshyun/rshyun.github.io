@@ -11,12 +11,8 @@
             "id": "e85638fcd2d3f4e4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "24 하계 모각코/6회차 계획 및 결과.md",
-                "mode": "source",
-                "source": true
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "24 하계 모각코/6회차 계획 및 결과.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "24 하계 모각코/6회차 계획 및 결과.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +127,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "24 하계 모각코/6회차 계획 및 결과.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -161,14 +153,17 @@
   },
   "active": "e85638fcd2d3f4e4",
   "lastOpenFiles": [
-    "24 하계 모각코/6회차 계획 및 결과.md",
-    "24 하계 모각코/회고.md",
     "index.md",
+    "docs/24-하계-모각코/24-하계-모각코.html",
+    "24 하계 모각코/24 하계 모각코.md",
+    "24 하계 모각코/무제 파일.md",
+    "24 하계 모각코/회고.md",
+    "24 하계 모각코/6회차 계획 및 결과.md",
+    "24 하계 모각코/1회차 계획 및 결과.md",
     "24 하계 모각코/3회차 계획 및 결과.md",
     "24 하계 모각코/5회차 계획 및 결과.md",
     "24 하계 모각코/4회차 계획 및 결과.md",
     "24 하계 모각코/2회차 계획 및 결과.md",
-    "24 하계 모각코/1회차 계획 및 결과.md",
     "docs/lib/media/생성결과물.png",
     "docs/lib/media/5회차2.png",
     "docs/lib/media/5회차1.png",
@@ -186,7 +181,6 @@
     "docs/24-하계-모각코/3회차-계획-및-결과.html",
     "docs/24-하계-모각코/2회차-계획-및-결과.html",
     "docs/24-하계-모각코/1회차-계획-및-결과.html",
-    "docs/24-하계-모각코",
     "24 하계 모각코d/6회차 계획 및 결과.md",
     "24 하계 모각코d/5회차 계획 및 결과.md",
     "24 하계 모각코d/4회차 계획 및 결과.md",

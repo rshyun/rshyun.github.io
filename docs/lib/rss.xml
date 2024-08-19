@@ -1,4 +1,16 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 19 Aug 2024 03:46:59 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 19 Aug 2024 03:46:58 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 19 Aug 2024 12:29:29 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 19 Aug 2024 12:29:28 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[24 하계 모각코]]></title><description><![CDATA[ 
+ <br>
+<a data-tooltip-position="top" aria-label="1회차 계획 및 결과" data-href="1회차 계획 및 결과" href="24-하계-모각코\1회차-계획-및-결과.html" class="internal-link" target="_self" rel="noopener">1회차 (07/05)</a> : 모델 학습 방법 개념 정리<br>
+<a data-tooltip-position="top" aria-label="2회차 계획 및 결과" data-href="2회차 계획 및 결과" href="24-하계-모각코\2회차-계획-및-결과.html" class="internal-link" target="_self" rel="noopener">2회차 (07/26)</a> : 음성 생성 모델과 이미지 생성 모델<br>
+<a data-tooltip-position="top" aria-label="3회차 계획 및 결과" data-href="3회차 계획 및 결과" href="24-하계-모각코\3회차-계획-및-결과.html" class="internal-link" target="_self" rel="noopener">3회차 (07/29)</a> : PyTorch 환경 설정<br>
+<a data-tooltip-position="top" aria-label="4회차 계획 및 결과" data-href="4회차 계획 및 결과" href="24-하계-모각코\4회차-계획-및-결과.html" class="internal-link" target="_self" rel="noopener">4회차 (07/31)</a> : PyTorch<br>
+<a data-tooltip-position="top" aria-label="5회차 계획 및 결과" data-href="5회차 계획 및 결과" href="24-하계-모각코\5회차-계획-및-결과.html" class="internal-link" target="_self" rel="noopener">5회차 (08/05)</a> : GAN 모델로 이미지 생성 모델 실습<br>
+<a data-tooltip-position="top" aria-label="6회차 계획 및 결과" data-href="6회차 계획 및 결과" href="24-하계-모각코\6회차-계획-및-결과.html" class="internal-link" target="_self" rel="noopener">6회차 (08/08)</a> : 이미지 생성 모델 및 Image Inpainting 기술<br>
+<a data-tooltip-position="top" aria-label="회고" data-href="회고" href="24-하계-모각코\회고.html" class="internal-link" target="_self" rel="noopener">회고</a>
+]]></description><link>24-하계-모각코\24-하계-모각코.html</link><guid isPermaLink="false">24 하계 모각코/24 하계 모각코.md</guid><pubDate>Mon, 19 Aug 2024 12:28:49 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+ <br>
+<br><a data-tooltip-position="top" aria-label="24 하계 모각코" data-href="24 하계 모각코" href="24-하계-모각코\24-하계-모각코.html" class="internal-link" target="_self" rel="noopener">24 하계 모각코</a>
+]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Mon, 19 Aug 2024 12:25:10 GMT</pubDate></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.08 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -450,12 +462,4 @@ train 데이터를 제공하면, 학습되지 않은 신경망은 정답을 제�
 긴 문장에서도 안정적인 음성을 생성할 수 있다. 트랜스포머의 셀프 어텐션 메커니즘을 활용하여 문맥을 잘 반영한다.<br><br><br>음성 데이터를 벡터 양자화를 통해 압축하고, 이를 다시 복원하여 음성을 생성한다. 자연스러운 음성 합성에 적합하다.<br><br><br>멜 스펙트로그램을 음성 신호로 변환하는 GAN 기반 모델.<br>
 훈련 속도가 빠르고, 고품질의 음성을 생성할 수 있다.<br><br><br><br>초기 이미지 생성에 사용된 모델로 현재는 제한된 성능을 가진다.<br>
 이미지 데이터를 주성분으로 분해하여 저차원 공간에서 이미지를 재구성한다. <br><br>입력 이미지를 저차원 잠재 공간으로 압축한 후 이를 다시 복원하여 이미지를 생성한다. 주로 이미지 복원 및 생성에 사용된다.<br><br><br>이미지를 잠재 공간에 매핑하고, 이를 다시 이미지로 복원한다. 생성된 이미지의 다양성을 확보하기 위해 확률적 접근 방식을 사용한다.<br><br>Generator(생성모델) 과 Discriminator(판별모델) 이라는 서로 다른 2개의 네트워크로 이루어져 있으며 이 두 네트워크를 적대적으로 학습시키며 이미지를 생성한다.<br>생성모델의 목적은 진짜에 가까운 가짜를 생성하는 것이고 판별모델의 목적은 표본이 가짜인지 진짜인지 결정하는 것이다.<br>
-이 2가지 모델을 포함한 GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 데이터를 생성하는 것이며, 따라서 판별모델이 진짜인지 가짜인지 분별할 수 없는 경계에서 가짜 샘플과 실제 샘플을 구별할 수 없는 최적 솔루션으로 간주한다.<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:20:54 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
- <br><br>
-1회차 (07/05) : 모델 학습 방법 개념 정리<br>
-2회차 (07/26) : 음성 생성 모델과 이미지 생성 모델<br>
-3회차 (07/29) : PyTorch 환경 설정<br>
-4회차 (07/31) : PyTorch<br>
-5회차 (08/05) : GAN 모델로 이미지 생성 모델 실습<br>
-6회차 (08/08) : 이미지 생성 모델 및 Image Inpainting 기술
-]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Thu, 15 Aug 2024 10:07:04 GMT</pubDate></item></channel></rss>
+이 2가지 모델을 포함한 GAN 의 궁극적인 목적은 실제 데이터의 분포에 가까운 데이터를 생성하는 것이며, 따라서 판별모델이 진짜인지 가짜인지 분별할 수 없는 경계에서 가짜 샘플과 실제 샘플을 구별할 수 없는 최적 솔루션으로 간주한다.<br><br><br>이미지를 노이즈에서 점진적으로 제거하는 과정을 통해 이미지를 생성한다. 매우 고해상도의 이미지를 생성할 수 있으며, 최신 연구에서 주목 받고 있다.<br><br>확률적 모델로, 이미지 생성 과정에서 점진적으로 노이즈를 제거한다. 높은 품질의 이미지를 생성할 수 있다.<br><br><br>텍스트 설명을 기반으로 이미지를 생성하는 모델로, 텍스트-이미지 쌍 데이터를 학습한다. 고품질의 창의적인 이미지를 생성할 수 있다.<br><br>트랜스포머 구조를 사용한 GAN 모델로, 이미지를 생성한다. 트랜스포머의 강력한 특성을 활용하여 고품질의 이미지를 생성한다.]]></description><link>24-하계-모각코\2회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/2회차 계획 및 결과.md</guid><pubDate>Thu, 15 Aug 2024 10:20:54 GMT</pubDate></item></channel></rss>

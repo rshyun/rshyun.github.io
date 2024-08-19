@@ -40,9 +40,9 @@
   "showRibbon": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "//24 하계 모각코",
     "//Tags",
-    "/"
+    "/",
+    "//24 하계 모각코"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

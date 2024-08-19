@@ -1,4 +1,16 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 18 Aug 2024 15:41:15 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 18 Aug 2024 15:41:15 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSHYUN.GITHUB.IO]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>RSHYUN.GITHUB.IO</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 19 Aug 2024 02:29:04 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 19 Aug 2024 02:29:04 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
+ <br><br>
+날짜 : 2024.08.08 14:00 - 17:00<br>
+목표 : 모델 학습 방법 숙달<br>
+계획 : 이미지 생성 모델 및 Image Inpainting 기술
+<br><br><br><br>
+<br>image inpainting 은 이미지에서 손상되거나 누락된 부분을 재구성하는 기술임.
+<br>이미지에 사용하는 기술이지만, 결국 비디오는 일련의 이미지 프레임이기 때문에 비디오까지 확장될 수 있음.
+<br><br>
+<br>Navier-Stokes (나비에-스토크스) 방법 : 
+<br>Fast marching method (패스트 마칭 방법) : 
+<br><br><br><a rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1V3PdWaPkBbWTQp3nwsqEVwPKWuKOgJsG?usp=sharing" target="_blank">https://colab.research.google.com/drive/1V3PdWaPkBbWTQp3nwsqEVwPKWuKOgJsG?usp=sharing</a>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:52:39 GMT</pubDate></item><item><title><![CDATA[회고]]></title><description><![CDATA[ 
+ <br>모각코 활동을 진행하면서 자칫하면 그냥 허비할 수도 있었던 방학을 알차게 보낼 수 있었다. 다같이 직접 목표를 세우고 날짜에 맞춰서 계획을 짜니 혼자 하는 것보다 계획에 맞춰서 진행하기 수월했다. 데이터 전처리와 모델 학습 및 생성 방식 설계 중에서 나는 모델 학습을 중심적으로 맡아 다양한 음성 생성 모델과 이미지 생성 모델에 대해서 공부했고, 그 중 GAN 모델 설계를 중점적으로 진행했다. 물론 자체적으로 진행하다 보니 막히는 부분이 많았고, 이론적으로 공부한 내용을 실습에 적용하는 것이 쉽지 않았다. Pytorch 설치 부분에서 막혀 시간을 오래 끌기도 하고, GAN 모델 설계도 생성 모델과 판별 모델을 구현해내는 과정이나 원하는 최종 결과물을 얻기는 힘들었지만, 그런 과정들에서 많은 것을 배울 수 있었다. 또한 그냥 공부하고 프로젝트를 진행하는 것이 아니라 블로그를 작성하면서 각각의 공부 계획을 미리 작성하고 진행 현황에 대해서 기록하니, 공부한 내용을 돌아볼 수도 있고 헷갈렸던 내용도 그냥 지나치지 않고 블로그에 쉽게 작성할 수 있을 때까지 고민하다 보니 더 자세히 이해할 수 있었다. 활동 기간 동안 힘든 점도 많았지만, 이 경험을 통해서 많이 성장할 수 있어 의미 있는 시간이었다.]]></description><link>24-하계-모각코\회고.html</link><guid isPermaLink="false">24 하계 모각코/회고.md</guid><pubDate>Mon, 19 Aug 2024 02:28:57 GMT</pubDate></item><item><title><![CDATA[5회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.08.05 14:00 - 17:00<br>
 목표 : 모델 학습 방법 숙달<br>
@@ -207,13 +219,7 @@ plt.figure(figsize=(8, 8))
 plt.imshow(grid_img)
 plt.axis('off')
 plt.show()
-복사<br><img alt="생성결과물.png" src="lib\media\생성결과물.png"><br>위 코드를 학습 시킨 후 생성된 결과물.<br><a rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank">https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing</a>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:41:07 GMT</pubDate><enclosure url="lib\media\5회차1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\5회차1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[6회차 계획 및 결과]]></title><description><![CDATA[ 
- <br><br>
-날짜 : 2024.08.08 14:00 - 17:00<br>
-목표 : 모델 학습 방법 숙달<br>
-계획 : 이미지 생성 모델 및 Image Inpainting 기술
-<br><br><br><br><br><br><br><a rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1V3PdWaPkBbWTQp3nwsqEVwPKWuKOgJsG?usp=sharing" target="_blank">https://colab.research.google.com/drive/1V3PdWaPkBbWTQp3nwsqEVwPKWuKOgJsG?usp=sharing</a>]]></description><link>24-하계-모각코\6회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/6회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:40:51 GMT</pubDate></item><item><title><![CDATA[회고]]></title><description><![CDATA[ 
- <br>모각코 활동을 진행하면서 자칫하면 그냥 시간을 허비할 수도 있었던 방학을 알차게 보낼 수 있었다. 직접 목표를 세우고 날짜에 맞춰서 계획을 짜니 혼자 하는 것보다 계획에 맞춘 진행이 수월했다. 물론 자체적으로 진행하다 보니 막히는 부분도 많았고 엉뚱한 방향으로 나아가기도 했지만, 그런 부분들이 내가 배우고 성장할 수 있는 기회였다. 또한 그냥 공부하고 프로젝트를 진행하는 것이 아니라 블로그를 작성하면서 내가 공부할 내용을 미리 계획하고 그 결과물을 작성하는 것이 성장에 더욱 도움이 된다는 것을 알 수 있는 시간이었다. 기회가 된다면 다음 모각코 활동에도 참여해 더 성장하고 싶다.]]></description><link>24-하계-모각코\회고.html</link><guid isPermaLink="false">24 하계 모각코/회고.md</guid><pubDate>Sun, 18 Aug 2024 15:31:29 GMT</pubDate></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
+복사<br><img alt="생성결과물.png" src="lib\media\생성결과물.png"><br>위 코드를 학습 시킨 후 생성된 결과물.<br><a rel="noopener" class="external-link" href="https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing" target="_blank">https://colab.research.google.com/drive/1YBLarKOzyMRdLmkkanHMwbgj040KDZsJ?usp=sharing</a>]]></description><link>24-하계-모각코\5회차-계획-및-결과.html</link><guid isPermaLink="false">24 하계 모각코/5회차 계획 및 결과.md</guid><pubDate>Sun, 18 Aug 2024 15:41:07 GMT</pubDate><enclosure url="lib\media\5회차1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\5회차1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[3회차 계획 및 결과]]></title><description><![CDATA[ 
  <br><br>
 날짜 : 2024.07.29 22:00 - 24:00<br>
 목표 : 모델 학습 방법 숙달<br>

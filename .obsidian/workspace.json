@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "4a53a2dcc76747b9",
+        "id": "ef8234220e467185",
         "type": "tabs",
         "children": [
           {
-            "id": "e85638fcd2d3f4e4",
+            "id": "bc00692e34f59ae8",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "24 하계 모각코/회고.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "24 하계 모각코/회고.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "24 하계 모각코/회고.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "24 하계 모각코/회고.md"
+              }
             }
           }
         ],
@@ -151,19 +159,21 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "e85638fcd2d3f4e4",
+  "active": "bc00692e34f59ae8",
   "lastOpenFiles": [
-    "index.md",
-    "docs/24-하계-모각코/24-하계-모각코.html",
     "24 하계 모각코/24 하계 모각코.md",
-    "24 하계 모각코/무제 파일.md",
     "24 하계 모각코/회고.md",
+    "index.md",
     "24 하계 모각코/6회차 계획 및 결과.md",
-    "24 하계 모각코/1회차 계획 및 결과.md",
-    "24 하계 모각코/3회차 계획 및 결과.md",
     "24 하계 모각코/5회차 계획 및 결과.md",
     "24 하계 모각코/4회차 계획 및 결과.md",
+    "24 하계 모각코/3회차 계획 및 결과.md",
     "24 하계 모각코/2회차 계획 및 결과.md",
+    "24 하계 모각코/1회차 계획 및 결과.md",
+    "무제 파일/무제 파일.md",
+    "무제 파일",
+    "docs/24-하계-모각코/24-하계-모각코.html",
+    "24 하계 모각코/무제 파일.md",
     "docs/lib/media/생성결과물.png",
     "docs/lib/media/5회차2.png",
     "docs/lib/media/5회차1.png",
@@ -180,7 +190,6 @@
     "docs/24-하계-모각코/4회차-계획-및-결과.html",
     "docs/24-하계-모각코/3회차-계획-및-결과.html",
     "docs/24-하계-모각코/2회차-계획-및-결과.html",
-    "docs/24-하계-모각코/1회차-계획-및-결과.html",
     "24 하계 모각코d/6회차 계획 및 결과.md",
     "24 하계 모각코d/5회차 계획 및 결과.md",
     "24 하계 모각코d/4회차 계획 및 결과.md",
